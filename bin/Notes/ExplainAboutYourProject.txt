@@ -1,0 +1,79 @@
+1)Explain about your project?
+
+a) UC Suits – Unified Communication Migration at Infosys.
+
+The goal of this project is to automate the migration of users from Cisco to Microsoft Teams, including services like calling, meetings, messaging, and voice settings. This helps companies move thousands of users easily without doing everything manually.
+
+I’ve worked mainly on three key modules:
+
+1. Grouping Manager:
+
+Here, we upload input files (Excel or .bat from Cisco) to group users based on their department or location.
+
+I automated the file upload testing, validation of correct/incorrect data, and checked whether the users were grouped correctly.
+
+Also, I tested the Single Click Migration feature that moves users in bulk to Teams and verified the success/failure messages.
+
+
+
+2. Migration Manager:
+
+This module is used to migrate users using dropdowns and filters.
+
+I automated the entire flow—from selecting users to verifying if they were successfully migrated.
+
+I also tested edge cases, like trying to migrate already-migrated users, to ensure the system handles errors well.
+
+
+
+3. Provisioning Manager:
+
+After migration, this module allows enabling or disabling Teams features like voice calls.
+
+I verified whether the provisioning settings were saved correctly and reflected in the UI and reports.
+
+I also did negative testing to make sure provisioning isn’t allowed for users who aren’t migrated yet.
+
+
+
+
+In short, my role was to automate the end-to-end testing of user migration and post-migration configuration using Selenium with Java, TestNG, and Cucumber, along with tools like Apache POI for Excel file handling and Jira for bug tracking.
+
+
+
+
+
+
+
+2)How do you validate success/failure messages using selenium?
+
+a)we got alert message when it get success/failure using getText() method we extract alert text. These text and expected text we validate putting in the Assert.assertEquals assertion
+
+
+3)How did you use Apache POI in your automation?
+
+a)Apache POI was used to read user data from excel excel files .xlsm during file upload testing.
+
+
+4)How did you test dropdowns and filters in the migration manager?
+
+a)I used select class in selenium to interact with dropdownds. For filters I selected different values and updated the table results and used assertions to match data dynamically.
+
+
+5)Can you explain one tricky test scenario you handled?
+
+a)Yes. One tricky scenario was trying to migrate users who were already migrated. I had to verify the system throws an appropriate error and prevents duplicate migration. I used test data flags and assertions to validate behaviour.
+
+6)What kind of negative testing you did you do in provisioning manager?
+
+a)I tested scenarios like trying to enable features like call, meetings, voice, messaging for users who hadn't been migrated.
+
+
+7)How do you report bugs?
+
+a)We use Jira tool to log bugs with screenshots, steps to reproduce, and test environment details.
+
+
+8)How often do you run regression tests?
+
+a)We run regression tests before every major release and during sprint end. Critical test suites also run overnight through Jenkins.

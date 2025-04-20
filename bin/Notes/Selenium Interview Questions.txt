@@ -1,0 +1,427 @@
+
+1)why findelement is present in both webdriver,webelement?
+
+a)To focus on webdriver and webpages
+
+2)What is selenium ?
+
+a)Selenium automates browsers.Using selenium we can automate web applications on browsers like chrome, edge, firefox.
+
+3)what are its different selenium components?
+
+a)1)Selenium WebDriver	:-	Automates browsers by interacting with elements.
+  2)Selenium IDE, 
+  3)Selenium Grid
+
+4)What findElements?
+
+a)This will focus on the element based on locator strategy
+
+5)What are the different types of locators in selenium?
+
+a)	Id		(By.id)
+	Name		(By.name)
+	Class Name	(By.className)
+	Tag Name	(By.TagName)
+	Link Text	(By.linkText)
+	CSS Selector	(By.cssSelector)
+	XPath		(By.xpath)
+
+6)How do you handle dynamic elements in selenium?
+
+a)Handling dynamic elements in Selenium can be tricky because their properties, like IDs or class names, may change with every session, or they may take time to load
+  Here are the some strategies :-
+
+	XPath or CSS Selectors:
+	Waits (Implicit and Explicit):
+	JavaScript Execution:
+	Handle Exceptions:
+
+7)What is findElement?
+
+a)findElement focuses on finding only one element. If the element found, it returns the element. If the element not found, it throws NoSuchElementException.
+
+8)What is findElements?
+
+a)findElements focuses on finding multiple elements. If the elements are found, it returns a list of web elements. If the elements are not found, it returns an empty list.
+
+9)How do you handle dropdowns in Selenium?
+
+a)using Select Class
+
+10)How do you perform mouse hover, drag-and-drop, and right-click actions?
+
+a)Using the Action Class
+
+11)What is Implicit Wait?
+
+a)It will wait presence of Element in DOM (Document Object Model ) applicable to all elements globally before throwing an exception.
+
+12)What is Explicit Wait?
+
+a)It waits for a specific element with conditions until the element is present.(wait.until(expectedConditions.presenceOfElements)).
+
+13)What is Fluent Wait?
+
+a)Same like a explicit wait it will wait for the element at regular intervals until timeout.
+
+14)How do you handle alerts, pop-ups, and authentication pop-ups?
+
+a)Using JavaScript alerts like driver.switchTo().alert(). we can perform necessary actions like alert.accept(), alert.dismiss(), alert.sendkeys().
+
+15)How do you switch between multiple windows or tabs in selenium?
+
+a)Using getWindowHandles();
+
+16)How do you take a screenshot in Selenium WebDriver?
+
+a)Using takeScreenshot interface
+
+17)What is hybrid framework in selenium?
+
+a)It is a combination of data-driven, keyword driven frameWorks and POM model.
+
+18)what is page object model (POM)?
+
+a)	1)In POM, we have different web pages, we create a separate class for each web page this is called as the page class.
+	2)This page class contains the webelements nothing but variables to store(UI elements) and we define some methods to perform actions on webelements like .sendkeys(), .click().
+	3)Then testScripts call these methods making tests more readable and maintainable. Instead of directly interacting with elements.
+
+19)Difference between TestNg and Junit?
+
+a)TestNG and Junit are both testing frameworks in Java.
+	1)Junit is mainly used for basic unit testing in java.
+	2)TestNG is more advanced and commonly used for Selenium automation 
+		a)It supports priority for test order.
+		b)It allows test dependencies
+		c)It supports parallel test execution using .xml
+		d)It generates detailed reports
+		e)It supports @dataprovider for parameterized tests
+
+20)What are the advantages of using Cucumber?
+
+a)Cucumber is a tool it will help us to write test cases in simple English(Gherkin). So both technical and non-technical people can understand easily. It works with selenium the steps are reusable. And improves team collaboration and generates detailed reports.
+
+21)Explain Scenario, Scenario Outline, Examples in Cucumber?
+
+a)Scenario
+	Scenario represents a single test case like validating a specific functionality
+ Scenario Outline
+	Runs the same scenario with multiple inputs
+ Examples
+	Data table for scenario Outline
+
+22)What are hooks in Cucumber?
+
+a)Hooks are special methods in cucumber that run before or after each scenario. They help in setting up and cleaning up the tests environment automatically.
+
+23)What is Data-Driven Framework?
+
+a)If the test data is coming from external sources like (excel, json) etc., and this data is used to run our test scripts is called a Data-Driven Framework.
+
+24)What is  Data Paramterization and how to achieve in TestNG?
+
+a)Runing the same script with different sets of test data. using @DataProvider we can achieve it.
+
+25)What is KeyWord-Driven Framework?
+
+a)In a keyword Driven Framework we use keywords to tell the system what actions to perform in the test. These actions can be things like clicking a button, typing something.
+
+	Mainly it has 3 types of keywords
+		a)Application Keywords :- Actions like clicking or typing
+		b)Generic keywords  :- Actions like waiting and closing the browser. It contains re-usable methods.
+		c)Validation Keywords :- Checking the result whether it is correct or not.
+
+26)How do we manage test execution reports in Selenium? Which tools do you use?
+
+a)Using Extent Reports
+
+27)Suppose your selenium test is failing randomly. How would you debug and fix it?
+
+a)Using explicit waits, logs, and retry logic
+
+28)What is the difference between the xpath and css?
+
+a)Both XPath and CSs Selectors are used to find elements on a webpage.
+	
+	xpath	:	we can find an element using xpath : //div[@class='username'] and we can search elements both forwards and backwards in the DOM
+. In CSS Selector only operates in the forward 			
+			direction.
+	
+	css selector	:	If an element has a class name, use a dot() before it. If it has Id we use #      
+				
+				<div class="button">Click Me</div>
+
+				CSS Selector : .button   (Selects all elements with class button)      
+
+29)What is actions in selenium?
+
+a)Action class is used to perform mouseOver, dragAndDrop, dragAndDropBy, ContextClick, DoubleClick these are miscelleneous actions.     
+
+30)How to right click on a button using selenium?
+
+a)Using ContextClick method we can perform right click actions.
+
+31)What is maven and what are its advantages?
+
+a)Maven is like a tool it helps us building and managing Java projects easier. It automatically handle things like
+	1)Downloading libraries like selenium, J-unit, TestNG
+	2)Organizing project files
+	3)Running tests
+	4)Creating Reports
+ Advantages : Instead of manually downloading and adding libraries like Selenium, JUnit we Just tell Maven which ones we need in a specific file(pom.xml) and it will take care of it.
+
+32)What is mvn clean, mvn test, mvn verify?
+
+a)	mvn clean 	: It will Delete all the old compiled files(like .class files) from the previous builds.
+
+ 	mvn test	: It Will runs our tests like JUnit or TestNG.
+	
+	mvn verify	: It runs tests and then checks that everything is in the correct state(build tests etc.,).
+
+
+33)What reports have you used in your frame work?
+
+a)Extent reports it provides beautiful, interactive HTML reports it supports logs, screenshots, pie-charts.
+
+34)What is JavaScript Executor?
+
+a)JavaScript Executor is an interface in selenium it allows us to execute JavaScript code it interacts directly with DOM where Selenium web driver can not do directly. Using JavaScript                executor we can perform actions like clicking, scrolling.
+
+35)What is stale element exception and how do you handle?
+
+a)Stale element exception means when there is any change in DOM (document object model) , the reference in UI gets older 
+
+	solution : reinitialize the WebElement/WebElements
+
+36)What is NoSuchElementException?
+
+a)If our xpath unable to locate element or elements we will get NoSuchElementException.
+
+	Reason 1: if the locator strategy is incorrect 
+	Solution 1: correct the locator strategy
+
+
+	Reason 2: synchronization issue or time out or loading issue 
+	Solution 2: introduce proper wait mechanism 
+
+	Reason 3: if the element is present in a frame/iframe 
+	Soultion 3: switch to that frame 
+
+
+	Reason 4: if the element is present in another window/tab 
+	Soultion 3: switch to window/tab 
+
+	Reason 5: if the element is present in a shadowDOM
+	Soultion 3: using Shadow DOM hanling or focusing on Shadow Root 
+
+
+37)what is your project?
+
+a)Its a BDD with cucumber api with pom model plus j unit as unit testing framework
+
+
+38)What is testScenario?
+
+a)A Scenario is a high-level description of a test. It tells a story about how the user interacts with the system in plain English using Gherkin language like Given, When, Then commands.
+
+
+39)What is testcase?
+
+a)A Test Case is a detailed step by step document used by testers. It includes things like test steps, expected results, actual results, and test data.
+
+
+
+40)what are the different projects you have done?
+
+a)	First Project is Hybrid using dataDriven, keywordDriven plus page object model design pattern plus testNg as a unit testing framework.
+
+	second project is BDD using cucumber with page object model design pattern plus with J unit as a unit testing framework.
+
+
+41)Logging Mechanism?
+
+a)	we have used extent text class object which is present Bydefault in extentreports api or dependencies we are not using log4j.
+
+
+42)What is your framework?
+
+a)	It's kind of hybrid framework where it is a combination of dataDriven where testData is coming from the excel. and we have keywords for each actions we have written and we applied 
+
+	POM model which is a design pattern with testNg as unit testing framework.
+
+43)what is page object model?
+
+a)	In POM lo manke different pages untai kadha okka okka page ke okka okka page class create cheyandi Aa page class lo unde webelements. webelements meeda chese actions ne 	
+
+	rasukondi webelements ante variables dane meeda chese actions ante methods.
+
+44)What is your Selenium version?
+
+a)Selenium version 4.27
+
+
+45)What is your Chrome version?
+
+a)chrome version 134.0
+
+
+46)What is your project structure?
+
+a)Our project is a Maven - based Java Selenium Automation Framework developed using BDD Cucumber and POM as a design pattern.
+
+1. src/main/java – Core Implementation Code
+
+A. com.orangehrm.base.BaseTest
+
+	1)Here we are initializing the webDriver and launching the browser and application using its url where testData coming from from the application.properties.
+
+	2)Here only we perform Maximizing the window and adding explicit and implicit timeouts.
+
+	3)Later these methods used in Step definitions
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+B. com.orangehrm.utils.utilKit
+
+	1)It Loads data from application.properties
+
+	2)It reads properties and using getProperty() method to fetch the values.
+
+	3)It contains some commonly used methods
+
+	4)In util class only we wrote some re-usable methods to perform reading test data from the excel and taking screenshots.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+C. com.orangehrm.exceptions.InvalidBrowserException
+
+	In the exception class where we have mentioned framework defined exceptions
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. src/test/java – Test Classes and Pages
+
+A. com.orangehrm.pages
+
+	1)We wrote BasePage class in pagesPackage which is parent class for all objects. 
+
+	2)It contains Generic execute Selenium actions methods like ToClick(), typeText(), validatingTitle(). These methods used in stepDefinitions.
+	
+	3)Along with BasePage class we have created individual page class for each web page in the page package.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+B. com.orangehrm.steps
+
+	1)In steps definitions we map each Gherkin step to actual Java methods using annotations like @Given, @When, @Then it contains logic to automate.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+C. com.orangehrm.runner.RegRunner
+
+	1)Here we used JUnit test runner for executing feature files.
+
+	2)Here runner class is annotated with 2 annotations
+
+		a)@RunWith(Cucumber.class) : To Tell Junit to run tests using cucumber.
+
+		b)@CucumberOptions : We configured things like
+			
+			1)feature files path.
+
+			2)tags to run specific scenario.
+
+			3)glue for step definitions location
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. src/test/resources – Test Resources
+
+A. com.orangehrm.features
+
+	Here, we write test steps using Gherkin Syntax, which is a plain English. These files define scenarios in a human-readable format with keywords like @Given, @When, @Then to 	understand everyone.
+	
+B. com.orangehrm.testData
+
+	To Store external test data like Excel or Json files used for data driven testing.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+C. properties/application.properties
+
+	To store environmental variables like base URL, test credentials et
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4.pom.xml
+
+	Here we listed dependencies like 
+		
+		a)Selenium WebDriver
+	
+		b)TestNG
+
+ 		c)Cucumber
+
+		d)Junit
+
+		e)Apache POI.
+
+
+47)Explain the points you cover while writing the test cases?
+
+a)First of all the focus of writing testing cases as per acceptance criteria making sure all the test cases are written in a way to test the acceptance criteria is met apart from that we focus on edge cases including both positive and negative test cases as well. 
+
+48)What are the important things while reporting a bug?
+
+a)Before raising a bug, I first check whether the issue has already been reported to avoid duplicates. I also re-test the scenario using different data and in different environments if needed, to confirm that it's a valid and consistent issue. Only after proper verification, I raise the bug with all necessary details for easy reproduction and resolution.
+
+49)What is the difference between the relative xpath and absolute xpath?
+
+a)Absolute path : It starts from the root node and follows the entire path down to the element. starts with single forward slash/
+
+Relative path : It starts from the current node or anywhere in the document. starts with double forward slashes
+
+50)What is agile methodology?
+
+a)Agile methodology is a way of developing software step by step, instead of making the whole project at once.
+
+	1)we divide the work into small parts called sprints(usually 1-2 weeks)
+	
+	2)In each sprint, we plan, develop, test and deliver a smaller part of the product.
+
+	3)After each sprint, we get feedback from the client or product owner and make changes if needed.
+
+51)What is sprint?
+
+a)A sprint is a short, fixed period of time (usually 1 to 4 weeks) in Agile methodology during which a team works to complete a specific set of tasks or features.
+
+52)What is scrum?
+
+a)Scrum is a type of Agile framework used to manage and complete complex software projects in a structured way. It helps teams work together, break big projects into smaller tasks, and deliver work in short cycles called sprint(usually 1-2 weeks).
+
+	SCRUM HAS 3 MAIN ROLES :
+
+	1)Product Owner : Decides what to build (creates and manages the backlog).
+
+	2)Scrum Master : Guides the team and remove obstacles.
+
+	3)Development Team : Builds and tests the product.
+
+
+	KEY SCRUM EVENTS :
+
+	1)Sprint Planing : Decide what to do in the upcoming sprint.
+
+	2)Daily StandUp : Short daily meeting to discuss work progress.
+
+	3)Sprint Review : Show completed work to stakeholders.
+
+	4)Sprint Retrospective : Team discuss what went well and what to improve.
+
+
+53)
+
+
+
