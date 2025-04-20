@@ -1,0 +1,87 @@
+1)what are the subinterfaces of collection interface or what are the main interfaces in collections in java
+
+a) list, queue, set
+
+
+collection = combining some elements.To overcome arrays limitations we have collections concept.
+
+
+2)what are the subinterfaces of collection interface or what are the main interfaces in collections in java
+
+a) list, queue, set
+
+
+collection = combining some elements.To overcome arrays limitations we have collections concept.
+
+
+4)In collection add method returntype is boolean.some collections doesn't allow duplicates if duplicates present it will throw error instead throwing error they used Boolean to show false.
+
+5)Difference between 1)arraylist & 2)hashSet?
+
+a) ArrayList Doesn't allow duplicates. HashSet allow duplicates.
+	
+
+6)what happens if we add dupliactes to HashSet?
+
+a)It will give return type Boolean. If value add returns True otherwise False.
+
+
+
+7)what is your location strategy in your project?
+
+a)X - Path
+
+
+8)why you not encourage absolute x-path?
+
+a)Absolute x paths contains indexes which may change because of some ui changes so which may break our scripts we are executing after any change. it always starts from (/html).
+
+
+9)what is return type of add() method in collections?
+
+a)Boolean T or F
+
+10)what is return type of put() method in HashMap?
+
+a)Value
+
+
+1. getLastRowNum()
+
+✔ Starts from index 0 (zero-based).
+✔ Counts both empty and non-empty rows (as long as they were used before).
+✔ Returns the index of the last used row (not the total count).
+
+❌ Does not count spaces separately → It only looks at the last used row index.
+
+
+---
+
+2. getLastCellNum()
+
+✔ Starts from index 1 (one-based).
+✔ Counts both empty and non-empty cells (if they were used in a row).
+✔ Returns the index of the last used column + 1 (not the total count).
+
+❌ It does not count spaces separately, but if a cell contains only spaces, it is still considered a used cell.
+
+
+---
+
+3. getPhysicalNumberOfRows()
+
+✔ Starts from 1 (one-based count).
+✔ Counts only rows that have at least one non-empty cell.
+✔ Returns the total number of rows that contain data.
+
+
+---
+
+4. getPhysicalNumberOfCells()
+
+✔ Starts from 1 (one-based count).
+✔ Counts only non-empty cells in a row (ignores empty cells).
+✔ Returns the total number of non-empty cells in a row.
+
+
+11)
