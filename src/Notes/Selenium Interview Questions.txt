@@ -410,7 +410,7 @@ a)Scrum is a type of Agile framework used to manage and complete complex softwar
 	3)Development Team : Builds and tests the product.
 
 
-	KEY SCRUM EVENTS :
+	Sprint Ceremonies or Scrum Ceremonies :
 
 	1)Sprint Planing : Decide what to do in the upcoming sprint.
 
