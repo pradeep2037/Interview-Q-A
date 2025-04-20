@@ -410,7 +410,7 @@ a)Scrum is a type of Agile framework used to manage and complete complex softwar
 	3)Development Team : Builds and tests the product.
 
 
-	KEY SCRUM EVENTS :
+	Sprint Ceremonies or Scrum Ceremonies :
 
 	1)Sprint Planing : Decide what to do in the upcoming sprint.
 
@@ -421,7 +421,95 @@ a)Scrum is a type of Agile framework used to manage and complete complex softwar
 	4)Sprint Retrospective : Team discuss what went well and what to improve.
 
 
-53)
+53)How to write x-path?
+
+a)	//tagname[@attributename=value]
+  
+ 	//input[@id='username']
+
+54)While writing xpaths if you get 2 lines add filter to figure out one?
+
+a)//input[@class='login_input' and @type='password']
+
+-----------------------------------------------
+x-path based on tagname and text on element
+-----------------------------------------------
+
+"//div[@class='navFooterColHead' and text()='Make Money with Us']/parent::div"
+
+//td[text()='Important Note:']
+	(or)
+
+//td[@class='build_title']
+
+-------------------------------------
+x-path using contains function
+-------------------------------------
+
+//img[@src='img/google-play.png']
+	     (or)
+//tagname[contains(@attribute,'subset in the value')]
+//img[contains(@src,'google-play')]
 
 
+//tagname[contains(text(),'subset in the value')]
+//a[contains(text(),'User Registration')]
+
+
+		(or)
+//a[@href='Register.php']
+
+---------------------------------------------------------------------------------------------------
+
+<tag1>
+   <tag2>
+   <tag3>
+        <tag5>
+<tag4>
+
+If you want to go from child to parent class 
+
+/parent::tagName
+
+
+If you want to go from parent to child class 
+
+/child::tagName
+
+
+If you want to come from parent to grand Child like tag1 to tag5
+/descendant::tag5
+
+//div[@class='navFooterLinkCol navAccessibility']/descendant::a[text()='Supply to Amazon'],
+
+If you want to reach tag2 from tag3 like below ex:
+
+tag2
+tag3
+/preceding-sibling::tag2
+
+
+If you want to reach from tag5 to tag1
+
+tag5/ancestor::tag1
+
+
+55)Which wait concept are you using?
+
+solution : explicit wait using webdriver wait.
+
+
+
+//div/table/tbody/tr[1]/td[1]
+//div/table/tbody/tr[1]/td[8]
+
+
+
+//div/table/tbody/tr[1]/td[1]
+//div/table/tbody/tr[36]/td[1]
+
+
+56)How wil you test broken links?
+
+a)httpurlconnection ane class ne use chestham, url ane class.Aa path ke url kanukone open connection chese connection chesena tarvata okka responsecode vathunde integer lo. Aa integer >=400 unte broken link.
 
