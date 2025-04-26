@@ -513,3 +513,10 @@ solution : explicit wait using webdriver wait.
 
 a)httpurlconnection ane class ne use chestham, url ane class.Aa path ke url kanukone open connection chese connection chesena tarvata okka responsecode vathunde integer lo. Aa integer >=400 unte broken link.
 
+57)Where you used Oops concept in your Selenium Project?
+
+a)	frame(int)
+	frame(string)
+	frame(webElement)
+
+frame concept we used it is a polymorphism method overloading we can pass in frame method int, string, webElement
