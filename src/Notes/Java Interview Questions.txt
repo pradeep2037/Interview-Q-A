@@ -1,9 +1,10 @@
+0)What is an array?
+
+a)Array in java is a collection of elements that stored together under one name it must be same datatype and can be accessed by index. The size of the array is fixed once it is created.
+
 1)what are the subinterfaces of collection interface or what are the main interfaces in collections in java
 
 a) list, queue, set
-
-
-collection = combining some elements.To overcome arrays limitations we have collections concept.
 
 
 2)what are the subinterfaces of collection interface or what are the main interfaces in collections in java
@@ -11,14 +12,16 @@ collection = combining some elements.To overcome arrays limitations we have coll
 a) list, queue, set
 
 
-collection = combining some elements.To overcome arrays limitations we have collections concept.
+3)What is collection in Java?
+
+a)In Java, collection is like a container used to store a group of objects. It helps us to add, remove and manage data easily. Java provides ready-made classes like ArrayList, LinkedList, and hashSet, which are part of the collection framework. These classes can grow and shrink in size, unlike arrays which have a fixed size.
 
 
 4)In collection add method returntype is boolean.some collections doesn't allow duplicates if duplicates present it will throw error instead throwing error they used Boolean to show false.
 
 5)Difference between 1)arraylist & 2)hashSet?
 
-a) ArrayList Doesn't allow duplicates. HashSet allow duplicates.
+a) ArrayList Does allow duplicates. HashSet doesn't allow duplicates.
 	
 
 6)what happens if we add dupliactes to HashSet?
@@ -84,4 +87,146 @@ a)Value
 ✔ Returns the total number of non-empty cells in a row.
 
 
-11)
+11)What is Java? Explain its features?
+
+a)Java is a high-level, object-oriented programming language is used to create software. It is very secure and able to run on any computer. Once we write a Java Program, we can run it anywhere - like windows, mac, Linux without changing the code.
+
+FEATURES :-
+  a)Simple :- Removed many of the confusing concepts like explicit pointers, Garbage collector will do the deallocation activities we don't need to worry abput memory management.
+
+  b)Object-Oriented :- We can create "Objects" and reuse them. It helps in organizing and structuring our code better.
+
+  c)Robust :- Java is strong and able to handle errors. Java doesn't crash easily. It checks our code for errors it has automatic garbage collector.
+
+  d)Secure :- Java keeps our computer safe from viruses.
+
+  e)PlatformIndependent :- If we write the code once and run it anywhere. Java converts our code into bytecode, which runs on any system with java installed.
+
+  f)Multithreaded :- Java can do many tasks at the same time
+
+
+12)What are the Main Principles of Oops?
+
+[Think of a class as a blueprint or template - like the blueprint for a car. It defines what properties (like color, model, engine type) and behaviours (like drive, brake) a car should have. An object is an actual car built from that blueprint. It has specific values - like a red Honda Civic with a petrol engine.]
+
+Object :- In Java, an object is an instance of a class that represents a real-world entity.
+
+
+state : represents data or attributes of an object (ex :- marker colour, height, width, length);
+
+In Java (state = variables)
+
+Behaviour : represents the operations/tasks of an object (ex :- to write something on board).
+
+In Java (behaviour = methods)
+
+Identity : a unique ID used by JVM to identify object 
+
+Marker : (state /variables : shape , length , color etc ..)
+		 (behaviour / methods :  writing on biard , marking something on parcel etc..)
+		 
+Dog : (state /variables : gender , breed , color etc ..)
+		 (behaviour / methods :  eating , barking sleep etc..)
+		 
+AccountNumber : (state /variables : length of digits)
+		 (behaviour / methods :  funds transfer, account statements etc..)
+
+
+Class :- A logical entity, it is a Blueprint/template from which you can create object.
+
+
+a)Oops :- Oops is a object oriented programming system where everything is treated as objects. These objects contain variables and methods.
+
+	1)Inheritance :- One class can use variables, methods of another class like a child inheriting traits from parent class.
+
+	2)Encapsulation :- Hiding data in terms of private variables and private methods within a class and restricting direct access to them. They can only be accessed and modified 	through public methods(Getters & Setters).
+	
+	3)Abstraction :- Abstraction means hiding the internal implementation of the body it shows only functionality. It has abstract methods(without body), concrete methods(with body). 
+	It has template in the abstract class we use this template to write our own logic in the child classes.
+
+	4)Polymorphism :- Polymorphism means many forms mainly it has Method Overloading, Method Overriding.
+		a)Method Overloading : - Same method name with different parameters.
+		b)Method Overriding : - It is a process of providing replacement for the parent class method functionality with the child class method functionality.
+
+13)How does Java achieve memory management?
+
+a)Java manages memory by itself using garbage collector, heap and stack memory. Garbage Collector removes objects that are no longer used.
+
+14)What is constructor? How are they different from methods?
+
+a)A Constructor is a special block of code will execute when an object is created to the class. It has the same name as the class and no return type and void.
+
+15)What is the main method in Java?
+
+a)The main method is the starting point of any Java Program. It is where the execution begins.
+
+	public : So it can be called from anywhere by the JVM.
+
+	static : So it can run without creating an object of the class.
+
+	void : It doesn't return anything.
+
+	main : Name recognized by java as the entry point.
+
+	string[] args : Used to accept command-line inputs if needed. 
+
+16)Difference between the JDK, JRE, JVM?
+
+a)JVM : -
+	It converts .class files into binary language which into computer can understand. handles garbage collection.
+
+  JRE :- 
+	It is used to run Java applications contains JVM + Libraries + SupportFiles.
+
+  JDK :-
+	It is used to write, compile, and run Java programs. It contains JRE + Development Tools. And it is used to create java programs.
+
+
+17)Explain platform independent in Java?
+
+a)Java code is converted into .class files and the JVM knows how to run those .class files on any system.
+
+
+18)What is defect(Bug) Lifecycle?
+
+a)The defect lifecycle shows the steps a bug goes through from when it is found to when it is fixed. It starts when a tester finds a bug and reports it. Then the bug is assigned to a developer and fixed. The tester then checks the bug; if it works properly, they close it. Otherwise, it is sent back to the developer. Some bugs may also be rejected, marked as duplicates, or postponed. This process helps teams keep track of bugs and fix them properly.
+
+
+19)Difference between list & set?
+
+a)LIST :- 
+	A List is an ordered collection of elements, Duplicates are allowed, Iteration is possible.
+
+b)SET :-
+	A Set is an unordered collection of unique elements, Duplicates are not allowed, Iteration is possible.
+
+
+20)Can you override static methods?
+
+a)No, we can't override static methods.
+
+	1)Static methods belong to the class, not to the object.
+	2)If a child class defines the same static method as the parent class static method, it doesn't override it - it only hides it.
+
+
+21)Can the main method be overloaded?
+
+a)Yes, we can overload the main method in Java like other method, but the JVM always calls the main method with String[] args as the program's entry point. Other methods can be called manually inside it.
+
+
+22)Difference between the exeception and error?
+
+a)EXCEPTION :- Exception are problems that occur during runtime but can be handled in code using try/catch block.
+ 
+  ERROR :- Errors, represent serious issues related to the JVM which can't be handled in code.
+
+
+23)Difference between checked and unchecked exceptions?
+
+a)CHECKED EXCEPTIONS :- Happen due to external factors like file not found, databaseError, networIssue. Java forces you to handle them using try-catch or throws. 			If you don't handle them, the program won't compile.
+
+  UNCHECKED EXCEPTIONS :- These happen due to bad logic or bugs in the code. Java doesn't force you to handle them. we get an error at runtime.
+
+
+24)
+
