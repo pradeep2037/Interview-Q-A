@@ -1,8 +1,36 @@
-1)Explain about your project?
+1)Self Intro?
 
-a) UC Suits – Unified Communication Migration at Infosys.
+a)My name is Pradeep Kumar Reddy I'm from Andhra Pradesh. Currently working at Infosys with 2.10 years of experience in automation testing using Java and Selenium WebDriver. I’ve worked with JUnit as the testing tool and used the BDD Cucumber framework and POM as design pattern in my project. I’ve written and executed test cases for functional, regression, and did API testing using Postman. I’ve worked on modules like Grouping Manager, Migration Manager, and Provisioning Manager in my project, and have hands-on experience with Jenkins for CI and I used JIRA Tool for bug tracking.
 
-The goal of this project is to automate the migration of users from Cisco to Microsoft Teams, including services like calling, meetings, messaging, and voice settings. This helps companies move thousands of users easily without doing everything manually.
+2)Explain about your project?
+
+
+										PART - 1
+
+I’m working on a project called UC Suits – Unified Communication Migration project at Infosys, The goal of this project is to automate the migration of users from Cisco to Microsoft Teams, including services like calling, meetings, messaging, and voice settings. This helps companies without doing everything manually.
+
+My role involves automating test scenarios for key modules like Grouping Manager, Migration Manager, and Provisioning Manager. I use Java, Selenium WebDriver, JUnit, and Cucumber for automation testing, and Postman for API testing to validate provisioning and status APIs. I also use Apache POI to handle Excel-based input data.
+
+My main responsibilities include:
+
+Writing and executing test cases
+
+Validating UI flows
+
+Checking edge cases (like migrating already migrated users)
+
+Automating file upload functionality
+
+Doing negative testing (e.g., making sure provisioning isn’t allowed for users who are not yet migrated)
+
+Reporting bugs using JIRA
+
+Participating in Agile ceremonies like daily stand-ups and sprint planning
+
+
+										PART - 2
+
+a) I'm working on a project called UC Suits – Unified Communication Migration at Infosys. The goal of this project is to automate the migration of users from Cisco to Microsoft Teams, including services like calling, meetings, messaging, and voice settings. This helps companies move thousands of users easily without doing everything manually.
 
 I’ve worked mainly on three key modules:
 
@@ -45,35 +73,35 @@ In short, my role was to automate the end-to-end testing of user migration and p
 
 
 
-2)How do you validate success/failure messages using selenium?
+3)How do you validate success/failure messages using selenium?
 
 a)we got alert message when it get success/failure using getText() method we extract alert text. These text and expected text we validate putting in the Assert.assertEquals assertion
 
 
-3)How did you use Apache POI in your automation?
+4)How did you use Apache POI in your automation?
 
 a)Apache POI was used to read user data from excel excel files .xlsm during file upload testing.
 
 
-4)How did you test dropdowns and filters in the migration manager?
+5)How did you test dropdowns and filters in the migration manager?
 
 a)I used select class in selenium to interact with dropdownds. For filters I selected different values and updated the table results and used assertions to match data dynamically.
 
 
-5)Can you explain one tricky test scenario you handled?
+6)Can you explain one tricky test scenario you handled?
 
 a)Yes. One tricky scenario was trying to migrate users who were already migrated. I had to verify the system throws an appropriate error and prevents duplicate migration. I used test data flags and assertions to validate behaviour.
 
-6)What kind of negative testing you did you do in provisioning manager?
+7)What kind of negative testing you did you do in provisioning manager?
 
 a)I tested scenarios like trying to enable features like call, meetings, voice, messaging for users who hadn't been migrated.
 
 
-7)How do you report bugs?
+8)How do you report bugs?
 
 a)We use Jira tool to log bugs with screenshots, steps to reproduce, and test environment details.
 
 
-8)How often do you run regression tests?
+9)How often do you run regression tests?
 
 a)We run regression tests before every major release and during sprint end. Critical test suites also run overnight through Jenkins.
