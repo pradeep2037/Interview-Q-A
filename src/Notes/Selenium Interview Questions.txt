@@ -410,7 +410,7 @@ a)Scrum is a type of Agile framework used to manage and complete complex softwar
 	3)Development Team : Builds and tests the product.
 
 
-	Sprint Ceremonies or Scrum Ceremonies :
+	KEY SCRUM EVENTS (or) Differnt types of agile meeting (or) Sprint, Scrum Ceremonies
 
 	1)Sprint Planing : Decide what to do in the upcoming sprint.
 
@@ -420,6 +420,38 @@ a)Scrum is a type of Agile framework used to manage and complete complex softwar
 
 	4)Sprint Retrospective : Team discuss what went well and what to improve.
 
+
+53)why do you us PageFactory.initElements()?, What happens if you don't use PageFactory?, How are the elements initialized in POM?
+
+a)
+	1)In my project we used the POM design, where each page has separate class. for ex:- we have a LoginPage class that contains webElements like username, 
+        password, and login button. 	
+	2)But just creating an  objects using new LoginPage() doesn't automatically initialise these elements. If we try to use them will get a NullPointer  		Exception. 
+	3)To solve this, we use PageFactory.initElements(driver, this). This method initializes all the webElements so that we can perform actions like sendkeys() 
+     	or click().
+	4)We used this initialization in our base page using super() we called in the login page. Later created an object of the LoginPage class in the 
+ 	stepdefinition or wherever needed,
+
+
+54)What is mean by element click intercepted exception, and how do you fix it?
+
+a)Means selenium tried to click on a web element, but another element is covering as a result we get click intercepted exception, using javascript we may fix it.
+
+
+55)Have you used OOPS in your framework?
+
+a)CLASSES & OBJECTS :- In my selenium framework, I used classes & objects. For each web page, I created a separate class that contains the webelements and related methods. I created objects of those classes in my step definitions or test classes using those objects i called their methods to perform actions.
+
+	INHERITANCE   :- I implemented inheritance by creating a base class it contains some common methods like browser setup, teardown, & properties loading. My 
+                         test classes extend this base class to reuse those methods, which helps avoid code duplication.
+
+	POLYMORPHISM  :- I used polymorphism in my selenium framework like driver.switch().frame() where the same method works differently based on what I pass 			 like int, string, webelement.and also in my basepage i created some common methods like toClick(), toSendKeys(), tovalidateTitle() which 			 accepts different parameters this also good example for polymorphism.
+
+	ENCAPSULATION :-I followed encapsulation by keeping webElements private in page classes and using public methods to access them, which ensures data hiding 			and better control.
+
+	ABSTRACTION   :-I used selenium built-in abstractions like findElement(), findElements(), and getTitle() in my framework.
+
+	Interference  :- In Selenium, WebDriver is an interface that defines all the browser interaction methods like get(), findElement(), getTitle() etc. The 			actual implementations like ChromeDriver, FireFoxDriver, and EdgeDriver extend the RemoteWebDriver class, which in turn implements the 				WebDriver interface. 
 
 53)How to write x-path?
 
@@ -508,8 +540,4 @@ solution : explicit wait using webdriver wait.
 //div/table/tbody/tr[1]/td[1]
 //div/table/tbody/tr[36]/td[1]
 
-
-56)How wil you test broken links?
-
-a)httpurlconnection ane class ne use chestham, url ane class.Aa path ke url kanukone open connection chese connection chesena tarvata okka responsecode vathunde integer lo. Aa integer >=400 unte broken link.
 
