@@ -223,10 +223,21 @@ a)EXCEPTION :- Exception are problems that occur during runtime but can be handl
 
 23)Difference between checked and unchecked exceptions?
 
-a)CHECKED EXCEPTIONS :- Happen due to external factors like file not found, databaseError, networIssue. Java forces you to handle them using try-catch or throws. 			If you don't handle them, the program won't compile.
+a)CHECKED EXCEPTIONS :- Happen due to external factors like file not found, databaseError, networIssue. Java forces you to handle them using try-catch or throws. If you don't handle them, 			the program won't compile.
 
   UNCHECKED EXCEPTIONS :- These happen due to bad logic or bugs in the code. Java doesn't force you to handle them. we get an error at runtime.
 
 
-24)
+24)What is mean by ArrayList?
+
+a)In ArrayList, we can add/remove items. It is fast we can access the items directly by index because they stored in order(like train seat numbers if we add seat in the middle like at seat 2 the seat 2 will move from 2 to 3).But when we add an item in the middle, the existing item will move from existing index to next index. Simarly when we remove the item the index next to the removed item will fill the gap.
+
+
+25)What is mean by LinkedList?
+
+a)It is Similar to ArrayList, we can add, remove items but the main difference is items stored in a node, and these nodes are connected like a chain each item knows its next and previous item. Because of this, it is slow to access by index, since it goes one by one from the beginning to reach the index. If we add or remove any item in the middle the chain adjust easily.
+
+26)What is mean by HashMap?
+
+a)It stores values as key-value pairs, it is very fast to find value using the key. order is not guaranteed.
 
