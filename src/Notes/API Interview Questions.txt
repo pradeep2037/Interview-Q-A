@@ -134,4 +134,53 @@ pm.test("Verify response must be empty", function(){
 
 ===========================================================================================================================================================================================
 
+6)What is postman, and why is it used for API testing?
 
+a)Postman is a tool used to test and debug RESTFUl APIs. It allows testers and developers to send HTTP requests like GET, PUT, POST, DELETE and validate responses easily.
+
+
+7)What are headers in an API request?
+
+a)Headers provide metadata for the response. For example, content-type tells the server about the format of the data, and Authorization provides credentials like tokens.
+
+
+8)How do you set Authorization headers in postman?
+
+a)I can add it manually under the headers tab with
+	key	: Authorization
+	value	: Bearer <token>
+
+
+9)How do you write tests in postman using JavaScript?
+
+a)In the Tests tab, we use the pm object.
+
+
+10)how do you pass data between requests in postman?
+
+a)I extract values from one response using scripts and storing them in environment or global variables. Then, in the next request, we can use it.
+
+
+11)What is a collection in postman?
+
+a)A collection is a group of saved requests organized together.
+
+
+12)How do you validate response body values in postman?
+
+a)I use test scripts in postman to validate response data. For ex:- to check if the name is "Pradeep"
+
+	pm.test("Name is correct", function(){
+		let jsonData = pm.response.json():
+	pm.expect(jsonData.name).to.eql("Pradeep");
+	});
+
+
+13)Explain status codes like 200, 201, 400, 401, 404, 500?
+
+a)	200	:	ok			-	Request Successful.
+	201	:	Created			-	New resource created.
+	400	:	Bad Request		-	Client - side error.
+	401	:	Unauthorized		-	Missing/Invalid authentication.
+	404	:	Not Found		-	Resource doesn't exist
+	500	:	Internal Server Error	-	Server crashed.
