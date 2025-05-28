@@ -184,3 +184,24 @@ a)	200	:	ok			-	Request Successful.
 	401	:	Unauthorized		-	Missing/Invalid authentication.
 	404	:	Not Found		-	Resource doesn't exist
 	500	:	Internal Server Error	-	Server crashed.
+
+
+14)What is Jenkins? Why do we use it in automation testing?
+
+a)Jenkins is an open-source tool used for continuous integration. It automatically run our Selenium test cases instead of running manually.
+
+
+15)How did you integrate your Selenium test suite with Jenkins?
+
+a)	1)At First I create a Freestyle job in Jenkins.
+	2)Linked it with my GitHub repo where the code is stored.
+	3)In the build section, I added this command, mvn clean test.
+	4)And after saving the job i will run it clicking on build now. or i will schedule it.
+
+
+16)How do you trigger your regression test suite in Jenkins?
+
+a)	Manually - clicking the 'build now' button.
+	Automatically - by setting a schedule using cron language in the configuration.
+
+ 
