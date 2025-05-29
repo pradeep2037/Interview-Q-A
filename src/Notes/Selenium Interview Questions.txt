@@ -1,4 +1,4 @@
-1)why findelement is present in both webdriver,webelement?
+1)why findElement is present in both webdriver,webelement?
 
 a)webDriver : Used to find an element on the entire page. Like telling to the selenium in the webpage find the element. 
 
