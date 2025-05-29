@@ -200,8 +200,7 @@ a)JavaScript Executor is an interface in selenium it allows us to execute JavaSc
 
 35)What is stale element exception and how do you handle?
 
-a)Stale element exception means when there is any change in DOM (document object model) , the reference in UI gets older 
-
+a)It occurs when we try to interact with a web element that was found earlier in the Dom, but now not present in the current DOM due to a page reload or DOM refresh. 
 	solution : reinitialize the WebElement/WebElements
 
 36)What is NoSuchElementException?
