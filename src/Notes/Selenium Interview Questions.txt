@@ -1,7 +1,11 @@
-
 1)why findelement is present in both webdriver,webelement?
 
-a)To focus on webdriver and webpages
+a)webDriver : Used to find an element on the entire page. Like telling to the selenium in the webpage find the element. 
+
+			WebElement searchBox =  driver.findElement(By.id("search")).
+
+  webElement : Used to find a child element inside an already-located element.
+
 
 2)What is selenium ?
 
@@ -453,15 +457,29 @@ a)CLASSES & OBJECTS :- In my selenium framework, I used classes & objects. For e
 
 	Interference  :- In Selenium, WebDriver is an interface that defines all the browser interaction methods like get(), findElement(), getTitle() etc. The 			actual implementations like ChromeDriver, FireFoxDriver, and EdgeDriver extend the RemoteWebDriver class, which in turn implements the 				WebDriver interface. 
 
-53)How to write x-path?
+56)How to write x-path?
 
 a)	//tagname[@attributename=value]
   
  	//input[@id='username']
 
-54)While writing xpaths if you get 2 lines add filter to figure out one?
+57)While writing xpaths if you get 2 lines add filter to figure out one?
 
 a)//input[@class='login_input' and @type='password']
+
+58)What is TestNG Suite?
+
+a)In TestNg, a suite is a collection of test cases or classes that we want to run together. It's defined in an XML file (commonly named testing.xml) and allows us to do.
+
+	1)Grouping multiple test classes.
+	
+	2)Controlling the execution order.
+
+	3)Set parallel execution.
+
+	4)Passing parameters to tests.
+
+	5)we can include/exclude specific tests.
 
 -----------------------------------------------
 x-path based on tagname and text on element
