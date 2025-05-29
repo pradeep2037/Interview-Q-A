@@ -232,7 +232,7 @@ a)Its a BDD with cucumber api with pom model plus j unit as unit testing framewo
 
 38)What is testScenario?
 
-a)A Scenario is a high-level description of a test. It tells a story about how the user interacts with the system in plain English using Gherkin language like Given, When, Then commands.
+a)A Scenario is a high-level description what to test. It tells a story about how the user interacts with the system in plain English using Gherkin language like Given, When, Then commands.
 
 
 39)What is testcase?
