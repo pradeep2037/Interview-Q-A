@@ -1,6 +1,6 @@
 1)Self Intro?
 
-a)My name is Pradeep Kumar Reddy I'm from Andhra Pradesh. Currently working at Infosys with 2.10 years of experience in automation testing using Java and Selenium WebDriver. I’ve worked with JUnit as the testing tool and used the BDD Cucumber framework and POM as design pattern in my project. I’ve written and executed test cases for functional, regression, and did API testing using Postman. I’ve worked on modules like Grouping Manager, Migration Manager, and Provisioning Manager in my project, and have hands-on experience with Jenkins for continuous integration and I used JIRA Tool for bug tracking.
+a)Hi, my name is Pradeep Kumar Reddy. I’m from Andhra Pradesh. I completed my graduation in Mechanical Engineering in June 2022. Currently, I’m working at Infosys and have around 2.11 years of experience in Automation Testing using Java and Selenium WebDriver. In my project, I’ve worked with the BDD Cucumber framework and followed the Page Object Model (POM) design pattern. I’ve written and executed test cases for functional and regression testing. I also have hands-on experience with API testing using Postman. Additionally, I’ve used Jenkins for continuous integration and Jira for bug tracking and task management."
 
 2)Explain about your project?
 
