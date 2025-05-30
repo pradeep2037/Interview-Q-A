@@ -157,3 +157,8 @@ a)One of my strength is accepting the challenges. If i don't know something when
 12)what is your weakness?
 
 a)I'm little weak in the communication sometimes when I talk with my colleagues I observed that. I'm working on it to overcome.
+
+
+13)Why do you want to join into our company?
+
+a)I saw the company job post and it matched well with my skills in Java, Selenium, Junit, and API Testing. I felt it's a good opportunity to work with a strong tech team and improve myself.
