@@ -70,9 +70,6 @@ In short, my role was to automate the end-to-end testing of user migration and p
 
 
 
-
-
-
 3)How do you validate success/failure messages using selenium?
 
 a)we got alert message when it get success/failure using getText() method we extract alert text. These text and expected text we validate putting in the Assert.assertEquals assertion
@@ -105,3 +102,58 @@ a)We use Jira tool to log bugs with screenshots, steps to reproduce, and test en
 9)How often do you run regression tests?
 
 a)We run regression tests before every major release and during sprint end. Critical test suites also run overnight through Jenkins.
+
+
+10)What is Defect Life Cycle? (Simple Explanation)
+
+a)The Defect Life Cycle is the step-by-step journey of a bug (or issue) from the time it is found by a tester until it is fixed and closed by the team.
+
+
+1. New
+👉 When a tester finds a bug, it is logged as New in the defect tracking tool (like Jira, Bugzilla).
+
+
+2. Assigned
+👉 The bug is assigned to a developer by the test lead/project manager.
+
+
+3. Open
+👉 The developer has started analyzing and working on the bug.
+
+
+4. In Progress / Fixed
+👉 The developer has fixed the bug and marked it as Fixed (or Resolved in some tools).
+
+
+5. Retest
+👉 The tester now retests the issue to verify whether the bug has really been fixed.
+
+
+6. Reopen (if needed)
+👉 If the bug still exists, the tester reopens it and sends it back to the developer.
+
+
+7. Verified
+👉 If the bug is fixed and not reproducible, the tester marks it as Verified.
+
+
+8. Closed
+👉 The test lead or tester closes the bug after confirmation.
+
+
+
+Rejected – It's not actually a bug.
+
+Deferred – It's a valid bug but will be fixed later.
+
+Duplicate – The same bug was already reported before.
+
+
+11)What is your strengths?
+
+a)One of my strength is accepting the challenges. If i don't know something when I'm working, I will take it as a challenge like a opportunities to learn new things. Because it helps me to grow technically.
+
+
+12)what is your weakness?
+
+a)I'm little weak in the communication sometimes when I talk with my colleagues I observed that. I'm working on it to overcome.
