@@ -241,3 +241,9 @@ a)It is Similar to ArrayList, we can add, remove items but the main difference i
 
 a)It stores values as key-value pairs, it is very fast to find value using the key. order is not guaranteed.
 
+
+27)What is static why we use?
+
+a)1)Static is a keyword in Java used for memory management. It belongs to the class, not the object.
+  2)When we declare variable or method as a static, it is shared among all objects of that class - there is only one copy in memory.
+
