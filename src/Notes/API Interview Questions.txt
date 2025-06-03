@@ -205,3 +205,17 @@ a)	Manually - clicking the 'build now' button.
 	Automatically - by setting a schedule using cron language in the configuration.
 
  
+17)Why do we do API Testing?
+
+API Testing checks the backend logic of the application. Even if the UI looks fine, if the backend APIs are not working properly, the whole system can fail.
+
+For example, suppose a user enters the correct details in the login form. After clicking the Login button, the message "Login Successful" is shown. But the system actually depends on the API to send the correct user information.
+
+If the API sends incorrect or no data, then:
+
+The user may not be able to see the dashboard.
+
+They may not get access to the features they are supposed to use.
+
+
+That's why API Testing is important to make sure the application works correctly behind the scenes.
