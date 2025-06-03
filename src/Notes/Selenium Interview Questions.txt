@@ -1,3 +1,4 @@
+
 1)why findElement is present in both webdriver,webelement?
 
 a)webDriver : Used to find an element on the entire page. Like telling to the selenium in the webpage find the element. 
@@ -5,7 +6,7 @@ a)webDriver : Used to find an element on the entire page. Like telling to the se
 			WebElement searchBox =  driver.findElement(By.id("search")).
 
   webElement : Used to find a child element inside an already-located element.
-
+		
 
 2)What is selenium ?
 
@@ -59,7 +60,7 @@ a)Using the Action Class
 
 11)What is Implicit Wait?
 
-a)Implicit Wait is a type of wait provided by Selenium WebDriver that tells the driver to wait for a certain amount of time when trying to find an element. If it's not immediately available. before throwing a NoSuchElementException.
+a)Implicit Wait is a type of wait provided by Selenium WebDriver that tells the driver to wait for a certain amount of time when trying to find an element. If it's not immediately      available. before throwing a NoSuchElementException.
 
 12)What is Explicit Wait?
 
@@ -74,6 +75,7 @@ a)Fluent wait also same like a explicit wait, it waits for a specific condition 
 	2)we can set the polling interval.
 
 	3)Ignoring specific exceptions.
+
 
 14)How do you handle alerts, pop-ups, and authentication pop-ups?
 
@@ -196,11 +198,12 @@ a)Extent reports it provides beautiful, interactive HTML reports it supports log
 
 34)What is JavaScript Executor?
 
-a)JavaScript Executor is an interface in selenium it allows us to execute JavaScript code it interacts directly with DOM where Selenium web driver can not do directly. Using JavaScript                executor we can perform actions like clicking, scrolling.
+a)JavaScript Executor is an interface in selenium it allows us to execute JavaScript code it interacts directly with DOM where Selenium web driver can not do directly. Using JavaScript executor we can perform actions like clicking, scrolling.
 
 35)What is stale element exception and how do you handle?
 
 a)It occurs when we try to interact with a web element that was found earlier in the Dom, but now not present in the current DOM due to a page reload or DOM refresh. 
+
 	solution : reinitialize the WebElement/WebElements
 
 36)What is NoSuchElementException?
@@ -240,7 +243,6 @@ a)A Scenario is a high-level description what to test. It tells a story about ho
 a)A Test Case is a detailed step by step document used by testers. It includes things like test steps, expected results, actual results, and test data.
 
 
-
 40)what are the different projects you have done?
 
 a)	First Project is Hybrid using dataDriven, keywordDriven plus page object model design pattern plus testNg as a unit testing framework.
@@ -255,15 +257,11 @@ a)	we have used extent text class object which is present Bydefault in extentrep
 
 42)What is your framework?
 
-a)	It's kind of hybrid framework where it is a combination of dataDriven where testData is coming from the excel. and we have keywords for each actions we have written and we applied 
-
-	POM model which is a design pattern with testNg as unit testing framework.
+a)	It's kind of hybrid framework where it is a combination of dataDriven where testData is coming from the excel. and we have keywords for each actions we have written and we applied POM model which is a design pattern with testNg as unit testing framework.
 
 43)what is page object model?
 
-a)	In POM lo manke different pages untai kadha okka okka page ke okka okka page class create cheyandi Aa page class lo unde webelements. webelements meeda chese actions ne 	
-
-	rasukondi webelements ante variables dane meeda chese actions ante methods.
+a)	In POM lo manke different pages untai kadha okka okka page ke okka okka page class create cheyandi Aa page class lo unde webelements. webelements meeda chese actions ne rasukondi webelements ante variables dane meeda chese actions ante methods.
 
 44)What is your Selenium version?
 
@@ -283,7 +281,8 @@ a)Our project is a Maven - based Java Selenium Automation Framework developed us
 
 A. com.orangehrm.base.BaseTest
 
-	1)Here we are initializing the webDriver and launching the browser and application using its url where testData coming from from the application.properties.
+	1)Here we are initializing the webDriver and launching the browser and application using its url where testData coming from from the 
+         application.properties.
 
 	2)Here only we perform Maximizing the window and adding explicit and implicit timeouts.
 
@@ -297,7 +296,7 @@ B. com.orangehrm.utils.utilKit
 
 	2)It reads properties and using getProperty() method to fetch the values.
 
-	3)It contains some commonly used methods
+	3)It contains some commonly re - usable methods
 
 	4)In util class only we wrote some re-usable methods to perform reading test data from the excel and taking screenshots.
 
@@ -349,7 +348,8 @@ C. com.orangehrm.runner.RegRunner
 
 A. com.orangehrm.features
 
-	Here, we write test steps using Gherkin Syntax, which is a plain English. These files define scenarios in a human-readable format with keywords like @Given, @When, @Then to 	understand everyone.
+	Here, we write test steps using Gherkin Syntax, which is a plain English. These files define scenarios in a human-readable format with keywords like 
+        @Given, @When, @Then to understand everyone.
 	
 B. com.orangehrm.testData
 
@@ -430,16 +430,17 @@ a)Scrum is a type of Agile framework used to manage and complete complex softwar
 	4)Sprint Retrospective : Team discuss what went well and what to improve.
 
 
-53)why do you us PageFactory.initElements()?, What happens if you don't use PageFactory?, How are the elements initialized in POM?
+53)why do you use PageFactory.initElements()?, What happens if you don't use PageFactory?, How are the elements initialized in POM?
 
 a)
 	1)In my project we used the POM design, where each page has separate class. for ex:- we have a LoginPage class that contains webElements like username, 
         password, and login button. 	
-	2)But just creating an  objects using new LoginPage() doesn't automatically initialise these elements. If we try to use them will get a NullPointer  		Exception. 
+        2)But just creating an  objects using new LoginPage() doesn't automatically initialise these elements. If we try to use them will get a 
+        NullpointerException. 
 	3)To solve this, we use PageFactory.initElements(driver, this). This method initializes all the webElements so that we can perform actions like sendkeys() 
-     	or click().
+        or click().
 	4)We used this initialization in our base page using super() we called in the login page. Later created an object of the LoginPage class in the 
- 	stepdefinition or wherever needed,
+        stepdefinition or wherever needed,
 
 
 54)What is mean by element click intercepted exception, and how do you fix it?
@@ -451,28 +452,53 @@ a)Means selenium tried to click on a web element, but another element is coverin
 
 a)CLASSES & OBJECTS :- In my selenium framework, I used classes & objects. For each web page, I created a separate class that contains the webelements and related methods. I created objects of those classes in my step definitions or test classes using those objects i called their methods to perform actions.
 
-	INHERITANCE   :- I implemented inheritance by creating a base class it contains some common methods like browser setup, teardown, & properties loading. My 
-                         test classes extend this base class to reuse those methods, which helps avoid code duplication.
+	INHERITANCE   :- I implemented inheritance in my project. My step definition classes extend the BaseClass.java. so they can directly use the WebDriver 
+                         instance and browser related methods without re-writing them.
 
-	POLYMORPHISM  :- I used polymorphism in my selenium framework like driver.switch().frame() where the same method works differently based on what I pass 			 like int, string, webelement.and also in my basepage i created some common methods like toClick(), toSendKeys(), tovalidateTitle() which 			 accepts different parameters this also good example for polymorphism.
+	POLYMORPHISM  :- I used polymorphism in my selenium framework like driver.switch().frame() where the same method works differently based on what I pass 
+                         like int, string, webelement.
 
-	ENCAPSULATION :-I followed encapsulation by keeping webElements private in page classes and using public methods to access them, which ensures data hiding 			and better control.
+
+										(or)
+
+
+
+			public class WaitHelper {
+
+   					 // Overloaded method 1: Wait for an element with default timeout
+  					 public void waitForElement(WebElement element) {
+       					 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        				 wait.until(ExpectedConditions.visibilityOf(element));
+    			}
+
+   					 // Overloaded method 2: Wait for an element with custom timeout
+   			 		 public void waitForElement(WebElement element, int timeoutInSeconds) {
+        				 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+       					 wait.until(ExpectedConditions.visibilityOf(element));
+    			}
+				}
+
+			In my selenium BDD framework, i used method overloading in utility class. For Example:- in WaitHelper, I created 2 waitForElement() 
+                        methods one takes only a webElement and waits with a default timeout, and other methods takes both webElement and timeOut parameters to 
+                        allow flexible waits. so here method name is same, but parameters are different.
+
+			
+
+	ENCAPSULATION :- I used Encapsulation in the Page Object Model. For Example:- In my LoginPage.Java class, I kept all the WebElements private and I 
+                         restricted direct access to them. They can only be accessed and modified through public methods(Getters & Setters) like enterUsername() 
+                         and clickLogin().
+	
+
 
 	ABSTRACTION   :-I used selenium built-in abstractions like findElement(), findElements(), and getTitle() in my framework.
 
-	Interference  :- In Selenium, WebDriver is an interface that defines all the browser interaction methods like get(), findElement(), getTitle() etc. The 			actual implementations like ChromeDriver, FireFoxDriver, and EdgeDriver extend the RemoteWebDriver class, which in turn implements the 				WebDriver interface. 
+	Interference  :- In Selenium, WebDriver is an interface that defines all the browser interaction methods like get(), findElement(), getTitle() etc. The 
+                        actual implementations like ChromeDriver, FireFoxDriver, and EdgeDriver extend the RemoteWebDriver class, which in turn implements the 
+                        WebDriver interface. 
 
-56)How to write x-path?
 
-a)	//tagname[@attributename=value]
-  
- 	//input[@id='username']
 
-57)While writing xpaths if you get 2 lines add filter to figure out one?
-
-a)//input[@class='login_input' and @type='password']
-
-58)What is TestNG Suite?
+56)What is TestNG Suite?
 
 a)In TestNg, a suite is a collection of test cases or classes that we want to run together. It's defined in an XML file (commonly named testing.xml) and allows us to do.
 
@@ -485,6 +511,14 @@ a)In TestNg, a suite is a collection of test cases or classes that we want to ru
 	4)Passing parameters to tests.
 
 	5)we can include/exclude specific tests.
+
+
+
+14)Explain Selenium Architecture?
+
+a)I write test cases in Java Using Selenium client library. The Selenium client library translates these commands into JSON format and sends them as HTTP requests to the specific browser driver(chrome, edge, firfox). This driver communicates with the actual browser and perform the actions and send the results back to the selenium.
+
+
 
 -----------------------------------------------
 x-path based on tagname and text on element
