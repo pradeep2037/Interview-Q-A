@@ -198,7 +198,7 @@ a)Extent reports it provides beautiful, interactive HTML reports it supports log
 
 34)What is JavaScript Executor?
 
-a)JavaScript Executor is an interface in selenium it allows us to execute JavaScript code it interacts directly with DOM where Selenium web driver can not do directly. Using JavaScript executor we can perform actions like clicking, scrolling.
+a)JavaScript Executor is an interface in selenium it allows us to execute JavaScript code it interacts directly with DOM where Selenium web driver can not do directly. Using JavaScript                executor we can perform actions like clicking, scrolling.
 
 35)What is stale element exception and how do you handle?
 
@@ -257,11 +257,15 @@ a)	we have used extent text class object which is present Bydefault in extentrep
 
 42)What is your framework?
 
-a)	It's kind of hybrid framework where it is a combination of dataDriven where testData is coming from the excel. and we have keywords for each actions we have written and we applied POM model which is a design pattern with testNg as unit testing framework.
+a)	It's kind of hybrid framework where it is a combination of dataDriven where testData is coming from the excel. and we have keywords for each actions we have written and we applied 
+
+	POM model which is a design pattern with testNg as unit testing framework.
 
 43)what is page object model?
 
-a)	In POM lo manke different pages untai kadha okka okka page ke okka okka page class create cheyandi Aa page class lo unde webelements. webelements meeda chese actions ne rasukondi webelements ante variables dane meeda chese actions ante methods.
+a)	In POM lo manke different pages untai kadha okka okka page ke okka okka page class create cheyandi Aa page class lo unde webelements. webelements meeda chese actions ne 	
+
+	rasukondi webelements ante variables dane meeda chese actions ante methods.
 
 44)What is your Selenium version?
 
@@ -281,8 +285,7 @@ a)Our project is a Maven - based Java Selenium Automation Framework developed us
 
 A. com.orangehrm.base.BaseTest
 
-	1)Here we are initializing the webDriver and launching the browser and application using its url where testData coming from from the 
-         application.properties.
+	1)Here we are initializing the webDriver and launching the browser and application using its url where testData coming from from the application.properties.
 
 	2)Here only we perform Maximizing the window and adding explicit and implicit timeouts.
 
@@ -348,8 +351,7 @@ C. com.orangehrm.runner.RegRunner
 
 A. com.orangehrm.features
 
-	Here, we write test steps using Gherkin Syntax, which is a plain English. These files define scenarios in a human-readable format with keywords like 
-        @Given, @When, @Then to understand everyone.
+	Here, we write test steps using Gherkin Syntax, which is a plain English. These files define scenarios in a human-readable format with keywords like @Given, @When, @Then to 	understand everyone.
 	
 B. com.orangehrm.testData
 
@@ -433,14 +435,9 @@ a)Scrum is a type of Agile framework used to manage and complete complex softwar
 53)why do you use PageFactory.initElements()?, What happens if you don't use PageFactory?, How are the elements initialized in POM?
 
 a)
-	1)In my project we used the POM design, where each page has separate class. for ex:- we have a LoginPage class that contains webElements like username, 
-        password, and login button. 	
-        2)But just creating an  objects using new LoginPage() doesn't automatically initialise these elements. If we try to use them will get a 
-        NullpointerException. 
-	3)To solve this, we use PageFactory.initElements(driver, this). This method initializes all the webElements so that we can perform actions like sendkeys() 
-        or click().
-	4)We used this initialization in our base page using super() we called in the login page. Later created an object of the LoginPage class in the 
-        stepdefinition or wherever needed,
+	1)In my project we used the POM design, where each page has separate class. for ex:- we have a LoginPage class that contains webElements like username, password, and login button. 	2)But just creating an  objects using new LoginPage() doesn't automatically initialise these elements. If we try to use them will get a NullpointerException. 
+	3)To solve this, we use PageFactory.initElements(driver, this). This method initializes all the webElements so that we can perform actions like sendkeys() or click().
+	4)We used this initialization in our base page using super() we called in the login page. Later created an object of the LoginPage class in the stepdefinition or wherever needed,
 
 
 54)What is mean by element click intercepted exception, and how do you fix it?
@@ -452,11 +449,9 @@ a)Means selenium tried to click on a web element, but another element is coverin
 
 a)CLASSES & OBJECTS :- In my selenium framework, I used classes & objects. For each web page, I created a separate class that contains the webelements and related methods. I created objects of those classes in my step definitions or test classes using those objects i called their methods to perform actions.
 
-	INHERITANCE   :- I implemented inheritance in my project. My step definition classes extend the BaseClass.java. so they can directly use the WebDriver 
-                         instance and browser related methods without re-writing them.
+	INHERITANCE   :- I implemented inheritance in my project. My step definition classes extend the BaseClass.java. so they can directly use the WebDriver instance and browser related 			methods without re-writing them.
 
-	POLYMORPHISM  :- I used polymorphism in my selenium framework like driver.switch().frame() where the same method works differently based on what I pass 
-                         like int, string, webelement.
+	POLYMORPHISM  :- I used polymorphism in my selenium framework like driver.switch().frame() where the same method works differently based on what I pass like int, string, 				webelement.
 
 
 										(or)
@@ -478,23 +473,17 @@ a)CLASSES & OBJECTS :- In my selenium framework, I used classes & objects. For e
     			}
 				}
 
-			In my selenium BDD framework, i used method overloading in utility class. For Example:- in WaitHelper, I created 2 waitForElement() 
-                        methods one takes only a webElement and waits with a default timeout, and other methods takes both webElement and timeOut parameters to 
-                        allow flexible waits. so here method name is same, but parameters are different.
+			In my selenium BDD framework, i used method overloading in utility class. For Example:- in WaitHelper, I created 2 waitForElement() methods one takes only a 				webElement and waits with a default timeout, and other methods takes both webElement and timeOut parameters to allow flexible waits. so here method name is same, 			but parameters are different.
 
 			
 
-	ENCAPSULATION :- I used Encapsulation in the Page Object Model. For Example:- In my LoginPage.Java class, I kept all the WebElements private and I 
-                         restricted direct access to them. They can only be accessed and modified through public methods(Getters & Setters) like enterUsername() 
-                         and clickLogin().
+	ENCAPSULATION :- I used Encapsulation in the Page Object Model. For Example:- In my LoginPage.Java class, I kept all the WebElements private and I restricted direct access to them. 			 They can only be accessed and modified through public methods(Getters & Setters) like enterUsername() and clickLogin().
 	
 
 
 	ABSTRACTION   :-I used selenium built-in abstractions like findElement(), findElements(), and getTitle() in my framework.
 
-	Interference  :- In Selenium, WebDriver is an interface that defines all the browser interaction methods like get(), findElement(), getTitle() etc. The 
-                        actual implementations like ChromeDriver, FireFoxDriver, and EdgeDriver extend the RemoteWebDriver class, which in turn implements the 
-                        WebDriver interface. 
+	Interference  :- In Selenium, WebDriver is an interface that defines all the browser interaction methods like get(), findElement(), getTitle() etc. The actual implementations like 			ChromeDriver, FireFoxDriver, and EdgeDriver extend the RemoteWebDriver class, which in turn implements the WebDriver interface. 
 
 
 
@@ -514,9 +503,28 @@ a)In TestNg, a suite is a collection of test cases or classes that we want to ru
 
 
 
-14)Explain Selenium Architecture?
+57)Explain Selenium Architecture?
 
 a)I write test cases in Java Using Selenium client library. The Selenium client library translates these commands into JSON format and sends them as HTTP requests to the specific browser driver(chrome, edge, firfox). This driver communicates with the actual browser and perform the actions and send the results back to the selenium.
+
+
+
+58)How do you integrate selenium with your test automation framework?
+
+a)I integrated selenium with BDD using Cucumber, and used JUnit as the test runner. I followed the POM as a design pattern to maintain clean separation between page locators and test logic. I created a BaseClass to initialize the WebDriver and launch the application. I also developed utility classes for reusable methods like reading data from excel and screenshots, and I used extent reports for generating detailed test reports.
+
+
+59)What is mean by productOwner?
+
+a)He is the person who gives requirements to the team and decides which task is more important to build first.
+
+
+60)How do you prioritize tasks from the product backlog?
+
+a)I prioritize the most important task first, and talk to the product owner to decide. If one task is blocking others, I complete it early.
+
+
+61)
 
 
 
