@@ -247,3 +247,42 @@ a)It stores values as key-value pairs, it is very fast to find value using the k
 a)1)Static is a keyword in Java used for memory management. It belongs to the class, not the object.
   2)When we declare variable or method as a static, it is shared among all objects of that class - there is only one copy in memory.
 
+
+28)What is the difference between the throw and throws in Java?
+
+a)	throw :- It is used to manually throw an exception from our code. By using this we can throw only one exception.
+
+	throws :- When we know a method might cause an exception later, we inform the compiler by writing throws in the method declaration.
+
+					public void readData() throws IOException{
+
+					}
+
+
+29)Difference between the final, finally, finalize in Java?
+
+a) FINAL :- Final is a keyword in Java used to make something constant, which means we cannot change it after it's set.
+
+		ex:- Once a variable assigned as a final, we cannot change it again.
+
+				final int age = 25;
+					  age = 30;    wrong
+               
+		ex:- Once a method assigned as a final, child classes can't override it.
+
+				class Parent {
+
+					final void show (){
+						System.out.println("Parent method");
+					}
+				}
+				
+				class Child extends Parent{
+					void show(){
+						System.out.println("Child method");
+					}
+				}
+
+
+  FINALLY :- It is a block of code always executes after try - catch block whether an exception occurs or not.
+
