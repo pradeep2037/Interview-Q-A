@@ -60,22 +60,21 @@ a)Using the Action Class
 
 11)What is Implicit Wait?
 
-a)Implicit Wait is a type of wait provided by Selenium WebDriver that tells the driver to wait for a certain amount of time when trying to find an element. If it's not immediately      available. before throwing a NoSuchElementException.
+a)Implicit wait tells the WebDriver to wait for a certain amount of time while trying to find an element before throwing a NoSuchElementException if the element is not found immediately. It is applied globally to all the elements.
 
 12)What is Explicit Wait?
 
-a)Sometimes, webelements take time to load To avoid errors, we use explicit waits to pause the script/execution until the element is ready, using conditions like presence of element or visibility of element.
+a)Explicit wait means we will apply to the specific element to wait for certain amount of time based on certain conditions, like the element being visible, clickable, or present.
 
 13)What is Fluent Wait?
 
-a)Fluent wait also same like a explicit wait, it waits for a specific condition to be met but here we have some extra options like
+a)Fluent Wait is a custom wait we apply to the specific element same like a explicit wait. but it has some extra features like below
 
-	1)we can set the maximum timeout.
+	withTimeout(15)		:	here we can give total wait time.
+	
+	pollingEvery(2)		:	to check every 2 seconds.
 
-	2)we can set the polling interval.
-
-	3)Ignoring specific exceptions.
-
+	ignoring(NoSuchElement)	:	ignoring this exception.	
 
 14)How do you handle alerts, pop-ups, and authentication pop-ups?
 
