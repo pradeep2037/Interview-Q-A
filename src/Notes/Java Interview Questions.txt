@@ -286,3 +286,32 @@ a) FINAL :- Final is a keyword in Java used to make something constant, which me
 
   FINALLY :- It is a block of code always executes after try - catch block whether an exception occurs or not.
 
+
+30) what is 
+
+public class InvalidBrowserException extends RuntimeException {
+
+    public InvalidBrowserException() {
+        super("Invalid browser choosen ..make sure use chrome . firfox /edge ..");
+    }
+}
+
+
+a)Throwable
+  ↳ Exception
+     ↳ RuntimeException
+
+
+public RuntimeException(String message) {
+    super(message); // This goes further up to Throwable
+}
+
+
+public Throwable(String message) {
+    this.detailMessage = message;
+}
+
+
+
+
+
