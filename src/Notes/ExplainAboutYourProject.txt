@@ -5,6 +5,9 @@ a)Hi, my name is Pradeep Kumar Reddy. I’m from Andhra Pradesh. I completed my 
 2)Explain about your project?
 
 
+I handled writing reusable functions, test scripts, test data handling from Excel/JSON, API validations, and maintained Page Object Model structure.
+
+
 										PART - 1
 
 I’m working on a project called UC Suits – Unified Communication Migration project at Infosys, The goal of this project is to automate the migration of users from Cisco to Microsoft Teams, including services like calling, meetings, messaging, and voice settings. This helps companies without doing everything manually.
@@ -167,3 +170,4 @@ a)I saw the company job post and it matched well with my skills in Java, Seleniu
 14)Explain Selenium Architecture?
 
 a)I write test cases in Java Using Selenium client library. The Selenium client library translates these commands into JSON format and sends them as HTTP requests to the specific browser driver(chrome, edge, firfox). This driver communicates with the actual browser and perform the actions and send the results back to the selenium.
+
