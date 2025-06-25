@@ -60,7 +60,7 @@ a)Using the Action Class
 
 11)What is Implicit Wait?
 
-a)Implicit wait tells the WebDriver to wait for a certain amount of time while trying to find an element before throwing a NoSuchElementException if the element is not found immediately. It is applied globally to all the elements.
+a)Implicit wait tells the WebDriver to wait for a certain amount of time while trying to find an element before throwing a NoSuchElementException if the element is not found immediately.   It is applied globally to all the elements.
 
 12)What is Explicit Wait?
 
@@ -234,7 +234,16 @@ a)Its a BDD with cucumber api with pom model plus j unit as unit testing framewo
 
 38)What is testScenario?
 
-a)A Scenario is a high-level description what to test. It tells a story about how the user interacts with the system in plain English using Gherkin language like Given, When, Then commands.
+a)A Scenario is a single test case written in plain English(gherkin language) that describes specific behaviour of the application.
+
+	ex : feature :  order pizza
+
+	Scenario : place order for a veg pizza
+
+	Given I'm on the pizza order pizza
+	When I select veg pizza and quantity 1
+	And I click on place order
+	Then I should see "order placed successfully".
 
 
 39)What is testcase?
@@ -389,9 +398,9 @@ a)Before raising a bug, I first check whether the issue has already been reporte
 
 49)What is the difference between the relative xpath and absolute xpath?
 
-a)Absolute path : It starts from the root node and follows the entire path down to the element. starts with single forward slash/
+a)Absolute path : It starts from the root node and goes through each node in the DOM until it reaches the desired element. starts with single forward slash/
 
-Relative path : It starts from the current node or anywhere in the document. starts with double forward slashes
+Relative path : It starts from the current node or anywhere in the document to reach the desired element using attributes, text, or partial text. starts with double forward slashes
 
 50)What is agile methodology?
 
@@ -523,8 +532,165 @@ a)He is the person who gives requirements to the team and decides which task is 
 a)I prioritize the most important task first, and talk to the product owner to decide. If one task is blocking others, I complete it early.
 
 
-61)
+61)Difference between driver.quit() vs driver.class()?
 
+a)driver.quit() 		:	to close all window tabs.
+
+  driver.close()		:	to close current tab.
+
+
+
+62)Difference between assert and verify?
+
+a)assert	: it will check the expected output should met the actual output if doesn't match the test will fail.
+
+  verify	: it is also like checking the tests, even if the test fails it will not stop, it will continue checking other tests also.
+
+
+63)What is compatibility testing?
+
+a)Testing the application on different browsers(chrome, firefox,edge) and different devices(mobile, desktop).
+
+
+64)Difference between verification and validation?
+
+a)verification		:	It means checking the documents, designs to catch any mistakes like reading a test cases if its written properly or not?
+
+ validation		:	It means testing the application to see whether it is working or not as expected.
+
+
+
+65)when do you use exploratory testing?
+
+a)a)when requirements are unclear
+
+  b)when we have less time for writing test cases.
+
+
+66)How do you prioritize test cases?
+
+a)Based on business impact(login, payments), customer requirements & deadlines.
+
+
+
+67)what are Listeners in TestNG/Selenium?
+
+a)Listeners are interfaces that listen to events during test execution(like test pass/fail/start)
+
+	useful for
+	
+	1)Logging.
+
+	2)SCreenshots
+
+	3)Reporting.
+
+
+68)How to set test priority in cucumber?
+
+a)cucumber doesn't support priority like TestNg. In cucumber, step execution order is defined by the order of steps wriiten in the .feature file, not by annotations.
+
+
+69)How to run parallel tests in selenium?
+
+a)we can run parallel tests by configuring all the tests in the testing.xml file.
+
+
+70)How do you import test data from an excel file for different scenario outlines in a feature file?
+
+a)we use APACHE POI to read excel data and pass it to step definitions using DataProvider.
+
+
+
+71)what is backround in selenium cucumber BDD?
+
+a)Background is used to define common steps that are run before every scenario in a feature file.
+
+Feature: Login Feature
+
+Background:
+  Given The browser is open
+  And User is on the login page
+
+Scenario: Login with valid user
+  When User enters valid credentials
+  Then Dashboard is displayed
+
+Scenario: Login with invalid user
+  When User enters wrong credentials
+  Then Error message is shown
+
+
+72)Annotations in TestNG and Junit?
+
+a)Junit Annotations
+
+	@Before
+	Runs before every test (scenario).
+	Use it to open browser, setup test data, etc.
+
+	@Before
+	public void setup() {
+    	System.out.println("👨‍💻 Launching browser before each scenario");
+	}
+
+        ----------------------------------------------------------------------------------------------
+	
+	@After
+	Runs after every test (scenario).
+	Use it to close browser, clear cookies, take screenshot if failed, etc.
+
+	@After
+	public void teardown() {
+    	System.out.println("🧹 Closing browser after each scenario");
+	}	
+	
+	----------------------------------------------------------------------------------------------
+
+	@BeforeClass
+	Runs once before all tests in a class.
+	It must be static.
+	Use it to set up things like database connection, report creation.
+
+	@BeforeClass
+	public static void initSuite() {
+    	System.out.println("📘 Runs once before all tests");
+	}
+
+	----------------------------------------------------------------------------------------------
+
+	@AfterClass
+	Runs once after all tests in a class.
+	Must also be static.
+	Good for closing resources or generating final report.
+
+	@AfterClass
+	public static void cleanupSuite() {
+    	System.out.println("📕 Runs once after all tests");
+	}
+
+
+ TestNG Annotations
+
+	@BeforeMethod
+	Runs before each test method (like @Test).
+	Use to launch browser before each test.
+
+	@BeforeMethod
+	public void launchBrowser() {
+    	System.out.println("🟢 Open browser before test");
+	}
+
+	----------------------------------------------------------------------------------------------
+
+	@AfterMethod
+	Runs after each test method.
+	Use to close browser.
+
+	@AfterMethod
+	public void closeBrowser() {
+    	System.out.println("🔴 Close browser after test");
+	}
 
 
 -----------------------------------------------
