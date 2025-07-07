@@ -5,9 +5,6 @@ a)Hi, my name is Pradeep Kumar Reddy. I’m from Andhra Pradesh. I completed my 
 2)Explain about your project?
 
 
-I handled writing reusable functions, test scripts, test data handling from Excel/JSON, API validations, and maintained Page Object Model structure.
-
-
 										PART - 1
 
 I’m working on a project called UC Suits – Unified Communication Migration project at Infosys, The goal of this project is to automate the migration of users from Cisco to Microsoft Teams, including services like calling, meetings, messaging, and voice settings. This helps companies without doing everything manually.
@@ -80,7 +77,7 @@ a)we got alert message when it get success/failure using getText() method we ext
 
 4)How did you use Apache POI in your automation?
 
-a)Apache POI was used to read user data from excel excel files .xlsm during file upload testing.
+a)Apache POI was used to read user data from excel files .xlsm during file upload testing.
 
 
 5)How did you test dropdowns and filters in the migration manager?
@@ -107,67 +104,27 @@ a)We use Jira tool to log bugs with screenshots, steps to reproduce, and test en
 a)We run regression tests before every major release and during sprint end. Critical test suites also run overnight through Jenkins.
 
 
-10)What is Defect Life Cycle? (Simple Explanation)
-
-a)The Defect Life Cycle is the step-by-step journey of a bug (or issue) from the time it is found by a tester until it is fixed and closed by the team.
-
-
-1. New
-👉 When a tester finds a bug, it is logged as New in the defect tracking tool (like Jira, Bugzilla).
-
-
-2. Assigned
-👉 The bug is assigned to a developer by the test lead/project manager.
-
-
-3. Open
-👉 The developer has started analyzing and working on the bug.
-
-
-4. In Progress / Fixed
-👉 The developer has fixed the bug and marked it as Fixed (or Resolved in some tools).
-
-
-5. Retest
-👉 The tester now retests the issue to verify whether the bug has really been fixed.
-
-
-6. Reopen (if needed)
-👉 If the bug still exists, the tester reopens it and sends it back to the developer.
-
-
-7. Verified
-👉 If the bug is fixed and not reproducible, the tester marks it as Verified.
-
-
-8. Closed
-👉 The test lead or tester closes the bug after confirmation.
-
-
-
-Rejected – It's not actually a bug.
-
-Deferred – It's a valid bug but will be fixed later.
-
-Duplicate – The same bug was already reported before.
-
-
-11)What is your strengths?
+10)What is your strengths?
 
 a)One of my strength is accepting the challenges. If i don't know something when I'm working, I will take it as a challenge like a opportunities to learn new things. Because it helps me to grow technically.
 
 
-12)what is your weakness?
+11)what is your weakness?
 
 a)I'm little weak in the communication sometimes when I talk with my colleagues I observed that. I'm working on it to overcome.
 
 
-13)Why do you want to join into our company?
+12)Why do you want to join into our company?
 
 a)I saw the company job post and it matched well with my skills in Java, Selenium, Junit, and API Testing. I felt it's a good opportunity to work with a strong tech team and improve myself.
 
 
-14)Explain Selenium Architecture?
+13)Explain Selenium Architecture?
 
 a)I write test cases in Java Using Selenium client library. The Selenium client library translates these commands into JSON format and sends them as HTTP requests to the specific browser driver(chrome, edge, firfox). This driver communicates with the actual browser and perform the actions and send the results back to the selenium.
+
+
+14)What is your roles & responsibilities?
+
+a)My responsibilities mostly include writing and executing test cases, performing retesting and regression testing, and developing and executing automation scripts. Apart from this, I write and maintain feature files, step definitions, and following POM. And I also perform API Testing, handle test execution, log bugs in JIRA, and generate reports using Extent Reports and actively participate in daily Agile ceremonies. 
 
