@@ -1,5 +1,5 @@
 
-1)why findElement is present in both webdriver,webelement?
+1)why findElement is present in both webdriver, webelement?
 
 a)webDriver : Used to find an element on the entire page. Like telling to the selenium in the webpage find the element. 
 
@@ -116,7 +116,7 @@ a)Cucumber is a tool it will help us to write test cases in simple English(Gherk
 21)Explain Scenario, Scenario Outline, Examples in Cucumber?
 
 a)Scenario
-	Scenario represents a single test case like validating a specific functionality
+	A scenario represents a single test case. It defines one complete flow to test a particular functionality from start to end through a series of steps.
  Scenario Outline
 	Runs the same scenario with multiple inputs
  Examples
@@ -175,11 +175,11 @@ a)Using ContextClick method we can perform right click actions.
 
 31)What is maven and what are its advantages?
 
-a)Maven is like a tool it helps us building and managing Java projects easier. It automatically handle things like
-	1)Downloading libraries like selenium, J-unit, TestNG
-	2)Organizing project files
-	3)Running tests
-	4)Creating Reports
+a)Maven is a tool used to build Java projects and manage dependencies using pom.xml.
+ 	1)It automatically downloads required JAR files
+	1)Maintains standard folder structure
+	2)Easily integrates with tools like selenium and Jenkins.
+	
  Advantages : Instead of manually downloading and adding libraries like Selenium, JUnit we Just tell Maven which ones we need in a specific file(pom.xml) and it will take care of it.
 
 32)What is mvn clean, mvn test, mvn verify?
@@ -234,16 +234,11 @@ a)Its a BDD with cucumber api with pom model plus j unit as unit testing framewo
 
 38)What is testScenario?
 
-a)A Scenario is a single test case written in plain English(gherkin language) that describes specific behaviour of the application.
+a)A high-level idea of what to test.
 
-	ex : feature :  order pizza
+	ex : "Verify login functionality"
 
-	Scenario : place order for a veg pizza
-
-	Given I'm on the pizza order pizza
-	When I select veg pizza and quantity 1
-	And I click on place order
-	Then I should see "order placed successfully".
+	It doesn't include detailed steps, it has just what to test.
 
 
 39)What is testcase?
@@ -287,105 +282,118 @@ a)chrome version 134.0
 
 46)What is your project structure?
 
-a)Our project is a Maven - based Java Selenium Automation Framework developed using BDD Cucumber and POM as a design pattern.
+a)My project is a Maven-based Java Selenium Automation Framework developed using BDD Cucumber, followed the Page Object Model (POM) as a design pattern, and used JUnit as the testing tool.
 
-1. src/main/java – Core Implementation Code
+📁 In src/main/java:
 
-A. com.orangehrm.base.BaseTest
+1) base package:
 
-	1)Here we are initializing the webDriver and launching the browser and application using its url where testData coming from from the application.properties.
+This contains the BaseTest class where I initialized the WebDriver, maximized the browser window, and launched the application using the URL, which is fetched from the  
 
-	2)Here only we perform Maximizing the window and adding explicit and implicit timeouts.
+application.properties file.
 
-	3)Later these methods used in Step definitions
+This setup method is reused in BasePage and step definition classes.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-B. com.orangehrm.utils.utilKit
+2) utils package:
 
-	1)It Loads data from application.properties
+Contains the Util class which loads test data from the application.properties file.
 
-	2)It reads properties and using getProperty() method to fetch the values.
+It uses FileInputStream and getProperty(key) to fetch values like base URL, username, and password.
 
-	3)It contains some commonly re - usable methods
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	4)In util class only we wrote some re-usable methods to perform reading test data from the excel and taking screenshots.
+3) exceptions package:
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Contains a class for framework-defined exceptions, which helps in handling specific custom error scenarios.
 
-C. com.orangehrm.exceptions.InvalidBrowserException
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	In the exception class where we have mentioned framework defined exceptions
+📁 In src/test/java:
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1) base package:
 
-2. src/test/java – Test Classes and Pages
+Here I created separate classes for each webpage, called Page Classes.
 
-A. com.orangehrm.pages
+All page classes extend a parent class called BasePage, which contains reusable methods like:
 
-	1)We wrote BasePage class in pagesPackage which is parent class for all objects. 
+a)typing text
 
-	2)It contains Generic execute Selenium actions methods like ToClick(), typeText(), validatingTitle(). These methods used in stepDefinitions.
-	
-	3)Along with BasePage class we have created individual page class for each web page in the page package.
+b)clicking buttons
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+c)selecting dropdown values
 
-B. com.orangehrm.steps
+d)validating page title
 
-	1)In steps definitions we map each Gherkin step to actual Java methods using annotations like @Given, @When, @Then it contains logic to automate.
+These methods are reused in all child page classes.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-C. com.orangehrm.runner.RegRunner
+2) runner package:
 
-	1)Here we used JUnit test runner for executing feature files.
+Contains the Runner class, which uses:
 
-	2)Here runner class is annotated with 2 annotations
+@RunWith(Cucumber.class) → tells JUnit to run tests with Cucumber
 
-		a)@RunWith(Cucumber.class) : To Tell Junit to run tests using cucumber.
+@CucumberOptions → where I configured:
 
-		b)@CucumberOptions : We configured things like
-			
-			1)feature files path.
+path to feature files
 
-			2)tags to run specific scenario.
+glue for step definitions
 
-			3)glue for step definitions location
+tags to run specific scenarios
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-3. src/test/resources – Test Resources
+3) steps package:
 
-A. com.orangehrm.features
+Contains the step definition classes.
 
-	Here, we write test steps using Gherkin Syntax, which is a plain English. These files define scenarios in a human-readable format with keywords like @Given, @When, @Then to 	understand everyone.
-	
-B. com.orangehrm.testData
+Here, each Gherkin step is mapped to a corresponding Java method using:
 
-	To Store external test data like Excel or Json files used for data driven testing.
+@Given
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@When
 
-C. properties/application.properties
+@Then
 
-	To store environmental variables like base URL, test credentials et
+These methods contain the logic to automate each step by calling methods from page classes.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-4.pom.xml
+📁 In src/test/resources:
+ 
+1) features folder:
 
-	Here we listed dependencies like 
-		
-		a)Selenium WebDriver
-	
-		b)TestNG
+Contains all the .feature files written in Gherkin syntax (plain English).
 
- 		c)Cucumber
+These files define test scenarios that are easy to read and understand for everyone.
 
-		d)Junit
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-		e)Apache POI.
+2) properties folder:
+
+Contains the application.properties file, which holds environmental test data like:
+
+Base URL
+
+Login credentials
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📄 pom.xml:
+This file contains all the dependencies required for the framework such as:
+
+Selenium WebDriver
+
+Cucumber
+
+JUnit
+
+WebDriverManager
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 47)Explain the points you cover while writing the test cases?
@@ -448,13 +456,28 @@ a)
 	4)We used this initialization in our base page using super() we called in the login page. Later created an object of the LoginPage class in the stepdefinition or wherever needed,
 
 
+
+		@FindBy(id = "uername")
+		WebElement username;
+
+		This only declares a variable - it does not connect it to any real element on the webpage.
+
+		To actually find and interact with the element in the DOM (Document Object Model), we need to initialize it - that's where
+
+		PageFactory.initElements(ddriver, this); comes in, It tells selenium "Hey, go find all the elements marked with @FindBy and link them to real elements on the page using 		this driver.
+
+		If you don't initialize and try username.sendkeys("Pradeep"), you will get a NullPointerException.
+
+
+
+
 54)What is mean by element click intercepted exception, and how do you fix it?
 
 a)Means selenium tried to click on a web element, but another element is covering as a result we get click intercepted exception, using javascript we may fix it.
 
 
 55)Have you used OOPS in your framework?
-
++
 a)CLASSES & OBJECTS :- In my selenium framework, I used classes & objects. For each web page, I created a separate class that contains the webelements and related methods. I created objects of those classes in my step definitions or test classes using those objects i called their methods to perform actions.
 
 	INHERITANCE   :- I implemented inheritance in my project. My step definition classes extend the BaseClass.java. so they can directly use the WebDriver instance and browser related 			methods without re-writing them.
@@ -546,8 +569,8 @@ a)assert	: it will check the expected output should met the actual output if doe
 
   verify	: it is also like checking the tests, even if the test fails it will not stop, it will continue checking other tests also.
 
-
 63)What is compatibility testing?
+
 
 a)Testing the application on different browsers(chrome, firefox,edge) and different devices(mobile, desktop).
 
@@ -692,6 +715,13 @@ a)Junit Annotations
     	System.out.println("🔴 Close browser after test");
 	}
 
+
+73)Which TestNG listeners have you  used in your automation framework?
+
+a)ITestListener for taking screenshots on test failure, logging test start/end.
+
+
+74)
 
 -----------------------------------------------
 x-path based on tagname and text on element
