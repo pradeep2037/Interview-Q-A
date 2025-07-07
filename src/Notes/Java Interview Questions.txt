@@ -96,11 +96,22 @@ FEATURES :-
 
   b)Object-Oriented :- We can create "Objects" and reuse them. It helps in organizing and structuring our code better.
 
-  c)Robust :- Java is strong and able to handle errors. Java doesn't crash easily. It checks our code for errors it has automatic garbage collector.
+  c)Robust :- Java is strong and able to handle unexpected errors, allowing the application to continue running smoothely and securely. Java doesn't crash easily. 
+
+		ex :- we developed online banking application that transfers money
+	
+		If the user enters an invalid amount (like 0 or negative value), the program crashes and the server goes down.
+
+		If its robust(Java handles this well) shows a proper message, "Invalid amount entered" and the app continue working.
 
   d)Secure :- Java keeps our computer safe from viruses.
 
   e)PlatformIndependent :- If we write the code once and run it anywhere. Java converts our code into bytecode, which runs on any system with java installed.
+
+		ex :- System.out.println("Hello")
+
+		1)Java compiler converts this into bytecode (.class file)
+		2)JVM reads the bytecode and converts into binary language
 
   f)Multithreaded :- Java can do many tasks at the same time
 
@@ -148,9 +159,9 @@ a)Oops :- Oops is a object oriented programming system where everything is treat
 		a)Method Overloading : - Same method name with different parameters.
 		b)Method Overriding : - It is a process of providing replacement for the parent class method functionality with the child class method functionality.
 
-13)How does Java achieve memory management?
+13)What is memory management in Java?
 
-a)Java manages memory by itself using garbage collector, heap and stack memory. Garbage Collector removes objects that are no longer used.
+a)Java uses automatic garbage collection to remove unused objects. Memory is managed by JVM in heap and stack memory.
 
 14)What is constructor? How are they different from methods?
 
@@ -187,9 +198,49 @@ a)JVM : -
 a)Java code is converted into .class files and the JVM knows how to run those .class files on any system.
 
 
-18)What is defect(Bug) Lifecycle?
+18)What is Defect Life Cycle? (Simple Explanation)
 
-a)The defect lifecycle shows the steps a bug goes through from when it is found to when it is fixed. It starts when a tester finds a bug and reports it. Then the bug is assigned to a developer and fixed. The tester then checks the bug; if it works properly, they close it. Otherwise, it is sent back to the developer. Some bugs may also be rejected, marked as duplicates, or postponed. This process helps teams keep track of bugs and fix them properly.
+a)The Defect Life Cycle is the step-by-step journey of a bug (or issue) from the time it is found by a tester until it is fixed and closed by the team.
+
+
+1. New
+👉 When a tester finds a bug, it is logged as New in the defect tracking tool (like Jira, Bugzilla).
+
+
+2. Assigned
+👉 The bug is assigned to a developer by the test lead/project manager.
+
+
+3. Open
+👉 The developer has started analyzing and working on the bug.
+
+
+4. In Progress / Fixed
+👉 The developer has fixed the bug and marked it as Fixed (or Resolved in some tools).
+
+
+5. Retest
+👉 The tester now retests the issue to verify whether the bug has really been fixed.
+
+
+6. Reopen (if needed)
+👉 If the bug still exists, the tester reopens it and sends it back to the developer.
+
+
+7. Verified
+👉 If the bug is fixed and not reproducible, the tester marks it as Verified.
+
+
+8. Closed
+👉 The test lead or tester closes the bug after confirmation.
+
+
+
+Rejected – It's not actually a bug.
+
+Deferred – It's a valid bug but will be fixed later.
+
+Duplicate – The same bug was already reported before.
 
 
 19)Difference between list & set?
@@ -223,10 +274,22 @@ a)EXCEPTION :- Exception are problems that occur during runtime but can be handl
 
 23)Difference between checked and unchecked exceptions?
 
-a)CHECKED EXCEPTIONS :- Happen due to external factors like file not found, databaseError, networIssue. Java forces you to handle them using try-catch or throws. If you don't handle them, 			the program won't compile.
+a)CHECKED EXCEPTIONS :- Checked exceptions happen due to external factors like FileNotFound,InternalServerError or DatabaseError. Java checks them at compiler time and force us to handle 			
+			them using try/catch or throws. Once we handle them properly, if the issue really occurs, it will caught in the catch block and the error will be shown at run time.
 
-  UNCHECKED EXCEPTIONS :- These happen due to bad logic or bugs in the code. Java doesn't force you to handle them. we get an error at runtime.
 
+			ex : - package practice;                       Try These example for better understanding about checked exception
+                               import java.io.FileReader;
+                               public class Prac {
+
+	                       public static void main(String[] args) {		
+		           *   FileReader fr = new FileReader("file.txt");
+				}
+			       }
+
+			
+
+  UNCHECKED EXCEPTIONS :- Unchecked exceptions are caused due to bad logic or coding mistakes like null or division by zero. Java doesn't check them at compile time. so it doesn't force us 			to handle. If they happen, they cause an error at run time.
 
 24)What is mean by ArrayList?
 
@@ -283,6 +346,8 @@ a) FINAL :- Final is a keyword in Java used to make something constant, which me
 					}
 				}
 
+		     Once a class assigned as final, can't be inherited.
+
 
   FINALLY :- It is a block of code always executes after try - catch block whether an exception occurs or not.
 
@@ -313,5 +378,10 @@ public Throwable(String message) {
 
 
 
+31)What are exceptions in Java?
 
+a)Exceptions are runtime errors. Java handles them using try-catch-finally blocks.
+
+
+32)
 
