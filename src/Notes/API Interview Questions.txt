@@ -18,7 +18,9 @@ a)I automated test cases using postman.
 
 a)I run API collections and generate reports in postman using newman.
 
-===========================================================================================================================================================================================
+
+========================================================================= API TESTING USING POSTMAN ========================================================================================
+
 TO GET LIST OF USERS
 ---------------------
 // 1)verifying response code is 200 ok
@@ -220,4 +222,133 @@ They may not get access to the features they are supposed to use.
 
 That's why API Testing is important to make sure the application works correctly behind the scenes.
 
+
+18)Whenever we create rest assured test cases by default it will follow BDD.
+
+19)In RestAssured Automation test case we can divide into three sections
+
+	Given		section
+	
+	When		section
+
+	Then		section
+
+
+In the Given section :- It contains pre - requisites
+
+	content- type, set cookies, add auth, add param, set headers info etc ...
+
+In the When section :- It contains requests
+
+	get, post, put, delete
+
+In the Then section :- It contains validations
+
+	validating status code, extract response, extract headers & cookies, response body...
+
+
+
+20)How will you convert Pojo to Json format and Json to POjo format and which package or which binding or which class you will use?
+
+a)Using Jackson API or Jackson Package along with the object mapper class.
+
+
+21)Difference between authentication & authorization?
+
+a)Authentication : - Authentication means it will check whether the user is valid or not.
+
+ Authorization   : - Authorization means the user is valid. we are checking access permissions to the authenticated users.
+
+
+22)What is Pojo?
+
+a)plane older java object
+
+
+23)What is JSON?
+
+a)JavaScript object notation
+
+
+24)What is Serialization?
+
+a)Converting of Java Object into Json Object/Json String is called Serialization.
+
+
+25)What is De-Serialization?
+
+a)Converting of Json Object/Json String into Java Object is called De-Serialization.
+
+
+26)What is Rest Assured? Why we use?
+
+a)RestAssured is a java library used to test RESTFUL APIs. It help us to send requests like get, put, post, delete and validate responses easily.
+
+
+27)What are some commonly used methods in the Rest Assured API?
+
+a)
+
+given(), when(), then()
+
+body(), header(), queryParam(), pathParam()
+
+statusCode(), log().all(), extract().response()
+
+get(), post(), put(), delete()
+
+
+
+28). How do you log the complete request and response in Rest Assured?
+
+a)then().statusCode(200).log().all();  //using log().all()
+
+
+29)How do you validate JSON response values?
+
+a)Using .body() and JsonPath : .body("booking.firstname", equalTo("Pradeep"))
+
+
+30)How do you test APIs that require authentication (OAuth 1.0 / 2.0, JWT token, etc.)?
+
+a)given().auth().oauth2(token)
+.when().get("/booking")
+	
+	or
+
+.header("Authorization", "Bearer " + token)
+
+
+31)Can you explain the architecture of your API testing framework?
+
+a)
+
+My framework has:
+
+BaseTest class – to load properties, base URI
+
+Payload classes – for request bodies (POJOs)
+
+Utils – for reusable methods
+
+Tests – TestNG test classes
+
+Reports – ExtentReports integrated
+
+Logging – via Log4j2
+
+Config – .properties for routes and env
+
+ 
+32) How do you test negative scenarios like 400, 401, 404, 500?
+
+400: Bad Request – send invalid input
+
+401: Unauthorized – don’t send token
+
+404: Not Found – request wrong URL
+
+500: Internal Server Error – trigger a crash (if possible)
+
+Example:
 
