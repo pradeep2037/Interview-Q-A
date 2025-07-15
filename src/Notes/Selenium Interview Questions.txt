@@ -721,7 +721,25 @@ a)Junit Annotations
 a)ITestListener for taking screenshots on test failure, logging test start/end.
 
 
-74)
+74)What is User Story?
+
+a)A small feature or requirement described from the end-user perspective.
+
+
+75)Explain Selenium Architecture?
+
+a)I write test scripts in Java Using Selenium client library. The Selenium client library converts each test script line into JSON format and sends them as HTTP requests to the specific browser driver(chrome, edge, firfox). This driver communicates with the actual browser and perform the actions and send the results back to the selenium.
+
+
+76)What is WebDriver?
+
+a)WebDriver is an interface in selenium that provides browser interaction methods like getDriver(), findElement(), sendKeys()
+
+
+77)
+
+
+
 
 -----------------------------------------------
 x-path based on tagname and text on element
