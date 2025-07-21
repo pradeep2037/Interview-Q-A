@@ -350,5 +350,17 @@ Config – .properties for routes and env
 
 500: Internal Server Error – trigger a crash (if possible)
 
-Example:
+
+33)Full form of REST?
+➤ Representational State Transfer
+
+
+34)REST Assured – Purpose of RequestSpec and ResponseSpec
+
+RequestSpec: Reusable common request setup (base URI, headers).
+
+ResponseSpec: Reusable response expectations (status code, response time).
+
+
+
 
