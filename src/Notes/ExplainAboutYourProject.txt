@@ -119,12 +119,7 @@ a)I'm little weak in the communication sometimes when I talk with my colleagues 
 a)I saw the company job post and it matched well with my skills in Java, Selenium, Junit, and API Testing. I felt it's a good opportunity to work with a strong tech team and improve myself.
 
 
-13)Explain Selenium Architecture?
-
-a)I write test cases in Java Using Selenium client library. The Selenium client library translates these commands into JSON format and sends them as HTTP requests to the specific browser driver(chrome, edge, firfox). This driver communicates with the actual browser and perform the actions and send the results back to the selenium.
-
-
-14)What is your roles & responsibilities?
+13)What is your roles & responsibilities?
 
 a)My responsibilities mostly include writing and executing test cases, performing retesting and regression testing, and developing and executing automation scripts. Apart from this, I write and maintain feature files, step definitions, and following POM. And I also perform API Testing, handle test execution, log bugs in JIRA, and generate reports using Extent Reports and actively participate in daily Agile ceremonies. 
 
