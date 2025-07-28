@@ -383,5 +383,49 @@ public Throwable(String message) {
 a)Exceptions are runtime errors. Java handles them using try-catch-finally blocks.
 
 
-32)
+32)Overload and Override static methods?
+
+Overload: Yes
+
+Override: No. Static methods belong to class not object
+
+
+33)Execute Test Cases in Framework
+
+Through TestNG/Cucumber runner class or Jenkins job
+
+
+34) Use of Test Runner in Cucumber
+
+It runs all feature files/scenarios
+
+Connects glue code with feature files
+
+
+
+35)Joins in SQL
+
+Inner Join: common records
+
+Left Join: all from left + match from right
+
+Right Join: all from right + match from left
+
+Full Join: all records from both
+
+Self Join: joining table with itself
+
+
+
+36)CRON in Jenkins
+
+Used to schedule jobs
+
+cron
+Copy
+Edit
+H 0 * * *   → Run every day at 12:00 AM
+
+
+40)
 
