@@ -757,18 +757,49 @@ Add assertions to verify successful login (e.g., check for dashboard text or URL
 java
 Copy
 Edit
-driver.findElement(By.id("username")).sendKeys("user");
+driver.findElement(By.id("username")).sendKeys("ulser");
 driver.findElement(By.id("password")).sendKeys("pass");
 driver.findElement(By.id("loginBtn")).click();
 Assert.assertTrue(driver.getCurrentUrl().contains("dashboard"));
 
 
+79)How you do parallel execution in TestNG?
+
+a)You run multiple test classes, methods, or tests at the same time, rather than one after another — and this is controlled via the .xml file.
+
+
+---
+
+🔧 Steps to run classes in parallel in TestNG:
+
+1. Create your test classes: Example – LoginTest.java, DashboardTest.java, RegistrationTest.java.
+
+
+2. Convert to TestNG Suite XML (right-click > Convert to TestNG if using IntelliJ or Eclipse).
+
+
+3. In your generated testng.xml, do the following:
 
 
 
+<suite name="RegressionSuite" parallel="classes" thread-count="3">
+    <test name="RegressionTests">
+        <classes>
+            <class name="com.yourpkg.LoginTest" />
+            <class name="com.yourpkg.DashboardTest" />
+            <class name="com.yourpkg.RegistrationTest" />
+        </classes>
+    </test>
+</suite>
+
+TestNG parallel execution means including the test classes in a TestNG XML file, setting parallel="classes" in the <suite> tag, adding thread-count, and running it as a TestNG suite to execute the classes in parallel.
 
 
+80)Is it possible with Cucumber + Junit?
 
+a)Yes, parallel execution is possible in Cucumber with JUnit.
+We use the Cucumber JVM Parallel Plugin to generate separate runner files for each feature file or scenario.
+Then we use the Maven Surefire Plugin to execute those generated runner files in parallel by configuring the threadCount and parallel mode.
 
 
 -----------------------------------------------
