@@ -182,10 +182,10 @@ a)I use test scripts in postman to validate response data. For ex:- to check if 
 
 a)	200	:	ok			-	Request Successful.
 	201	:	Created			-	New resource created.
-	400	:	Bad Request		-	Client - side error.
-	401	:	Unauthorized		-	Missing/Invalid authentication.
-	404	:	Not Found		-	Resource doesn't exist
-	500	:	Internal Server Error	-	Server crashed.
+	400	:	Bad Request		-	Client - side error.			send invalid input
+	401	:	Unauthorized		-	Missing/Invalid authentication.		don’t send token
+	404	:	Not Found		-	Resource doesn't exist			request wrong URL
+	500	:	Internal Server Error	-	Server crashed.				trigger a crash (if possible)
 
 
 14)What is Jenkins? Why do we use it in automation testing?
@@ -323,21 +323,18 @@ a)given().auth().oauth2(token)
 
 a)
 
-My framework has:
+“So in short, my Rest Assured framework is built using a layered approach:
 
-BaseTest class – to load properties, base URI
+Payload Layer for request objects,
 
-Payload classes – for request bodies (POJOs)
+Endpoints Layer for CRUD methods,
 
-Utils – for reusable methods
+Utilities Layer for config and file reading,
 
-Tests – TestNG test classes
+Properties File for managing routes,
 
-Reports – ExtentReports integrated
+And a Test Layer that drives the automation.
 
-Logging – via Log4j2
-
-Config – .properties for routes and env
 
  
 32) How do you test negative scenarios like 400, 401, 404, 500?
@@ -357,10 +354,39 @@ Config – .properties for routes and env
 
 34)REST Assured – Purpose of RequestSpec and ResponseSpec
 
-RequestSpec: Reusable common request setup (base URI, headers).
+RequestSpec: Request Specifications contains common Reusable request setup (base URI,basePath, headers).
 
-ResponseSpec: Reusable response expectations (status code, response time).
+ResponseSpec: Response Specifications contains some reusable responses like (expectedStatus code, expectedResponse time, expectedHeader).
 
+
+35)How do you integrate Rest Assured with your framework?
+
+a)I integrated a Rest Assured framework using TestNG, Extent Reports, and Log4j2 by adding the io.rest-assured Maven dependency. All API URLs, test credentials, and tokens are stored in a configure.properties file.
+
+ENDPOINTS PACKAGE :-
+I have an endpoints package containing the UserEndPoints class where I perform CRUD operations and get the API URLs from the ReadingPropertiesFile using keys.
+
+PAYLOAD PACKAGE :-
+In the payload package, I keep POJO classes for request payloads.
+
+TEST PACKAGE :-
+The test package contains TestNG classes that call the endpoints and validate responses using assertions, with each test logged in Extent Reports.
+
+UTILITIES PACKAGE :-
+The utilities package contains:
+ExtentReportManager to generate HTML reports,
+TestLogger to log test start, pass, and fail,
+ReadingPropertiesFile to load values from the configure.properties file."**
+
+
+36)How do you validate JSON response using Rest Assured?
+
+a)Use jsonPath() to fetch values
+
+Use assertEquals for validation
+
+
+37)
 
 
 
