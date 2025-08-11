@@ -123,3 +123,27 @@ a)I saw the company job post and it matched well with my skills in Java, Seleniu
 
 a)My responsibilities mostly include writing and executing test cases, performing retesting and regression testing, and developing and executing automation scripts. Apart from this, I write and maintain feature files, step definitions, and following POM. And I also perform API Testing, handle test execution, log bugs in JIRA, and generate reports using Extent Reports and actively participate in daily Agile ceremonies. 
 
+
+14)How do you manage deadlines and conflicting priorities?
+
+a)I first note down all tasks and their deadlines. Then I discuss with my lead to decide which tasks are most important. I work on high-priority tasks first and, if needed, use parallel execution in automation to save time. I also plan my day so that I handle complex tasks when my focus is highest.
+
+
+15)What if you had to automate a tool or application you never worked on before?
+a)I’d first explore the tool manually, understand its workflow, check what kind of app it is (web/desktop/mobile), pick a suitable tool, and i try if selenium interacts or not.
+
+
+16)Limited time to test a critical feature – what did you do?
+a)I focused on high-priority scenarios first, I use automation to run smoke tests, and testing edge cases manually. This covered critical areas in the short time available.
+
+17)A mistake you made and what you learned?
+a)I once missed testing with special characters, and a bug went to UAT. I learned to always include negative and boundary test cases.
+
+18)Developer rejects bug as “not reproducible” – what do you do?
+a)I recheck my steps, record video/screenshots, share logs, and if needed, replicate the developer’s environment to confirm the issue.
+
+
+19)Deferred Bug
+Bug fix is postponed to a future release because it’s not urgent or in current scope.
+
+
