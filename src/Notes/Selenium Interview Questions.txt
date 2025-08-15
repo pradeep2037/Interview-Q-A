@@ -802,6 +802,29 @@ We use the Cucumber JVM Parallel Plugin to generate separate runner files for ea
 Then we use the Maven Surefire Plugin to execute those generated runner files in parallel by configuring the threadCount and parallel mode.
 
 
+81)Why diver is present after (Javascriptexecutor) ?
+
+a)"Think of driver as a person who has both a car driving license and a crane operating license.
+But when we introduce them to Java, we only say: ‘This is my car driver.’
+Later, if we want them to operate the crane, we have to reintroduce them as: ‘Oh, by the way, this same person is also a crane operator.’ That reintroduction is called casting."
+
+
+ChromeDriver implements both the WebDriver and JavascriptExecutor interfaces. When we declare driver as a WebDriver, Java only knows it can perform WebDriver actions. By casting (JavascriptExecutor) driver, we are telling Java that this same object also has JavascriptExecutor capabilities, so we can call executeScript()."
+
+
+WebDriver → An interface that defines the standard browser automation methods like get(), findElement(), click(), etc.
+
+JavascriptExecutor → Another interface that defines methods to execute JavaScript in the browser, like executeScript() and executeAsyncScript().
+
+ChromeDriver → A class that implements both WebDriver and JavascriptExecutor (and some other interfaces internally like TakesScreenshot).
+
+
+
+
+
+
+
+
 -----------------------------------------------
 x-path based on tagname and text on element
 -----------------------------------------------
