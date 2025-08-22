@@ -78,11 +78,11 @@ a)Fluent Wait is a custom wait we apply to the specific element same like a expl
 
 14)How do you handle alerts, pop-ups, and authentication pop-ups?
 
-a)Using JavaScript alerts like driver.switchTo().alert(). we can perform necessary actions like alert.accept(), alert.dismiss(), alert.sendkeys().
+a)Using JavaScript alerts like driver.switchTo().alert(). we can perform necessary actions like alert.accept(), alert.dismiss(), alert.sendkeys(). Alert is an interface.
 
 15)How do you switch between multiple windows or tabs in selenium?
 
-a)Using getWindowHandles();
+a)Using getWindowHandles(); Method.
 
 16)How do you take a screenshot in Selenium WebDriver?
 
@@ -107,20 +107,57 @@ a)TestNG and Junit are both testing frameworks in Java.
 		b)It allows test dependencies
 		c)It supports parallel test execution using .xml
 		d)It generates detailed reports
-		e)It supports @dataprovider for parameterized tests
+		e)It supports @dataprovider to supply multiple sets of test data to a single test method for parameterized tests
 
 20)What are the advantages of using Cucumber?
 
 a)Cucumber is a tool it will help us to write test cases in simple English(Gherkin). So both technical and non-technical people can understand easily. It works with selenium the steps are reusable.
 
-21)Explain Scenario, Scenario Outline, Examples in Cucumber?
+21)Explain Scenario, TestScenario, TestCase Scenario Outline, Examples in Cucumber?
 
-a)Scenario
-	A scenario represents a single test case. It defines one complete flow to test a particular functionality from start to end through a series of steps.
- Scenario Outline
-	Runs the same scenario with multiple inputs
- Examples
-	Data table for scenario Outline
+
+a)Scenario: Login Functionality
+          |
+          |-- Test Scenario 1: Verify login with valid credentials
+          |        |
+          |        |-- Test Case:
+          |              1. Open browser
+          |              2. Navigate to login page
+          |              3. Enter valid username
+          |              4. Enter valid password
+          |              5. Click on Login button
+          |              6. Verify home page is displayed
+          |
+          |-- Test Scenario 2: Verify login with invalid credentials
+          |        |
+          |        |-- Test Case:
+          |              1. Open browser
+          |              2. Navigate to login page
+          |              3. Enter invalid username
+          |              4. Enter invalid password
+          |              5. Click on Login button
+          |              6. Verify error message is displayed
+          |
+          |-- Test Scenario 3: Verify login with blank fields
+                   |
+                   |-- Test Case:
+                          1. Open browser
+                          2. Navigate to login page
+                          3. Leave username and password blank
+                          4. Click on Login button
+                          5. Verify "Username/Password required" message
+
+
+Scenario : A high-level feature or functionality that we want to check in the application. 
+
+Test Scenario : A particular case under that feature that we actually test.
+
+Test Case : A series of steps we write to test that test scenario.
+
+Scenario Outline : It is used when we want to run the same scenario multiple times with different sets of test data.
+
+Examples : Data table for scenario Outline.
+
 
 22)What are hooks in Cucumber?
 
@@ -235,55 +272,22 @@ a)If our xpath unable to locate element or elements we will get NoSuchElementExc
 a)Its a BDD with cucumber api with pom model plus j unit as unit testing framework
 
 
-38)What is testScenario?
+38)Logging Mechanism?
 
-a)A high-level idea of what to test.
-
-	ex : "Verify login functionality"
-
-	It doesn't include detailed steps, it has just what to test.
+a)we have used extent text class object which is present Bydefault in extentreports api or dependencies we are not using log4j.
 
 
-39)What is testcase?
-
-a)A Test Case is a detailed step by step document used by testers. It includes things like test steps, expected results, actual results, and test data.
-
-
-40)what are the different projects you have done?
-
-a)	First Project is Hybrid using dataDriven, keywordDriven plus page object model design pattern plus testNg as a unit testing framework.
-
-	second project is BDD using cucumber with page object model design pattern plus with J unit as a unit testing framework.
-
-
-41)Logging Mechanism?
-
-a)	we have used extent text class object which is present Bydefault in extentreports api or dependencies we are not using log4j.
-
-
-42)What is your framework?
-
-a)	It's kind of hybrid framework where it is a combination of dataDriven where testData is coming from the excel. and we have keywords for each actions we have written and we applied 
-
-	POM model which is a design pattern with testNg as unit testing framework.
-
-43)what is page object model?
-
-a)	In POM lo manke different pages untai kadha okka okka page ke okka okka page class create cheyandi Aa page class lo unde webelements. webelements meeda chese actions ne 	
-
-	rasukondi webelements ante variables dane meeda chese actions ante methods.
-
-44)What is your Selenium version?
+39)What is your Selenium version?
 
 a)Selenium version 4.27
 
 
-45)What is your Chrome version?
+40)What is your Chrome version?
 
 a)chrome version 134.0
 
 
-46)What is your project structure?
+41)What is your project structure?
 
 a)My project is a Maven-based Java Selenium Automation Framework developed using BDD Cucumber, followed the Page Object Model (POM) as a design pattern, and used JUnit as the testing tool.
 
@@ -315,7 +319,7 @@ Contains a class for framework-defined exceptions, which helps in handling speci
 
 📁 In src/test/java:
 
-1) base package:
+1) pages package:
 
 Here I created separate classes for each webpage, called Page Classes.
 
@@ -399,21 +403,21 @@ WebDriverManager
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-47)Explain the points you cover while writing the test cases?
+42)Explain the points you cover while writing the test cases?
 
 a)First of all the focus of writing testing cases as per acceptance criteria making sure all the test cases are written in a way to test the acceptance criteria is met apart from that we focus on edge cases including both positive and negative test cases as well. 
 
-48)What are the important things while reporting a bug?
+43)What are the important things while reporting a bug?
 
 a)Before raising a bug, I first check whether the issue has already been reported to avoid duplicates. I also re-test the scenario using different data and in different environments if needed, to confirm that it's a valid and consistent issue. Only after proper verification, I raise the bug with all necessary details for easy reproduction and resolution.
 
-49)What is the difference between the relative xpath and absolute xpath?
+44)What is the difference between the relative xpath and absolute xpath?
 
 a)Absolute path : It starts from the root node and goes through each node in the DOM until it reaches the desired element. starts with single forward slash/
 
 Relative path : It starts from the current node or anywhere in the document to reach the desired element using attributes, text, or partial text. starts with double forward slashes
 
-50)What is agile methodology?
+45)What is agile methodology?
 
 a)Agile methodology is a way of developing software step by step, instead of making the whole project at once.
 
@@ -423,11 +427,11 @@ a)Agile methodology is a way of developing software step by step, instead of mak
 
 	3)After each sprint, we get feedback from the client or product owner and make changes if needed.
 
-51)What is sprint?
+46)What is sprint?
 
 a)A sprint is a short, fixed period of time (usually 1 to 4 weeks) in Agile methodology during which a team works to complete a specific set of tasks or features.
 
-52)What is scrum?
+47)What is scrum?
 
 a)Scrum is a type of Agile framework used to manage and complete complex software projects in a structured way. It helps teams work together, break big projects into smaller tasks, and deliver work in short cycles called sprint(usually 1-2 weeks).
 
@@ -451,7 +455,7 @@ a)Scrum is a type of Agile framework used to manage and complete complex softwar
 	4)Sprint Retrospective : Team discuss what went well and what to improve.
 
 
-53)why do you use PageFactory.initElements()?, What happens if you don't use PageFactory?, How are the elements initialized in POM?
+48)why do you use PageFactory.initElements()?, What happens if you don't use PageFactory?, How are the elements initialized in POM?
 
 a)
 	1)In my project we used the POM design, where each page has separate class. for ex:- we have a LoginPage class that contains webElements like username, password, and login button. 	2)But just creating an  objects using new LoginPage() doesn't automatically initialise these elements. If we try to use them will get a NullpointerException. 
@@ -467,19 +471,19 @@ a)
 
 		To actually find and interact with the element in the DOM (Document Object Model), we need to initialize it - that's where
 
-		PageFactory.initElements(ddriver, this); comes in, It tells selenium "Hey, go find all the elements marked with @FindBy and link them to real elements on the page using 		this driver.
+		PageFactory.initElements(driver, this); comes in, It tells selenium "Hey, go find all the elements marked with @FindBy and link them to real elements on the page using 		this driver.
 
 		If you don't initialize and try username.sendkeys("Pradeep"), you will get a NullPointerException.
 
 
 
 
-54)What is mean by element click intercepted exception, and how do you fix it?
+49)What is mean by element click intercepted exception, and how do you fix it?
 
 a)Means selenium tried to click on a web element, but another element is covering as a result we get click intercepted exception, using javascript we may fix it.
 
 
-55)Have you used OOPS in your framework?
+50)Have you used OOPS in your framework?
 
 a)CLASSES & OBJECTS :- In my selenium framework, I used classes & objects. For each web page, I created a separate class that contains the webelements and related methods. I created objects of those classes in my step definitions or test classes using those objects i called their methods to perform actions.
 
@@ -517,11 +521,10 @@ a)CLASSES & OBJECTS :- In my selenium framework, I used classes & objects. For e
 
 	ABSTRACTION   :-I used selenium built-in abstractions like findElement(), findElements(), and getTitle() in my framework.
 
-	Interference  :- In Selenium, WebDriver is an interface that defines all the browser interaction methods like get(), findElement(), getTitle() etc. The actual implementations like 			ChromeDriver, FireFoxDriver, and EdgeDriver extend the RemoteWebDriver class, which in turn implements the WebDriver interface. 
+	Interference  :- In Selenium, WebDriver is an interface that defines all the browser interaction methods like get(), findElement(), getTitle() etc. RemoteWebDriver is a concrete 			 class extend the webdriver interface this is the actual implementation of interface. Again Browser Specific drivers concrete classes like Chromium, FireFox, Safari 			 extend the RemoteWebDriver. In the ChromiumDriver again we have Chrome, Edge so I'm using chrome driver which indirectly i'm using the interface.
 
 
-
-56)What is TestNG Suite?
+51)What is TestNG Suite?
 
 a)In TestNg, a suite is a collection of test cases or classes that we want to run together. It's defined in an XML file (commonly named testing.xml) and allows us to do.
 
@@ -537,28 +540,28 @@ a)In TestNg, a suite is a collection of test cases or classes that we want to ru
 
 
 
-57)Explain Selenium Architecture?
+52)Explain Selenium Architecture?
 
-a)I write test scripts in Java Using Selenium client library. The Selenium client library converts each test script line into JSON format into JSON format and sends them as HTTP requests to the specific browser driver(chrome, edge, firfox). This driver communicates with the actual browser and perform the actions and send the results back to the selenium.
+a)I write test scripts in Java Using Selenium client library. The Selenium client library converts each test script line into JSON format and sends them as HTTP requests to the specific browser driver(chrome, edge, firfox). This driver communicates with the actual browser and perform the actions and send the results back to the selenium.
 
 
 
-58)How do you integrate selenium with your test automation framework?
+53)How do you integrate selenium with your test automation framework?
 
 a)I integrated selenium with BDD using Cucumber, and used JUnit as the test runner. I followed the POM as a design pattern to maintain clean separation between page locators and test logic. I created a BaseClass to initialize the WebDriver and launch the application. I also developed utility classes for reusable methods like reading data from excel and screenshots, and I used extent reports for generating detailed test reports.
 
 
-59)What is mean by productOwner?
+54)What is mean by productOwner?
 
 a)He is the person who gives requirements to the team and decides which task is more important to build first.
 
 
-60)How do you prioritize tasks from the product backlog?
+55)How do you prioritize tasks from the product backlog?
 
 a)I prioritize the most important task first, and talk to the product owner to decide. If one task is blocking others, I complete it early.
 
 
-61)Difference between driver.quit() vs driver.class()?
+56)Difference between driver.quit() vs driver.close()?
 
 a)driver.quit() 		:	to close all window tabs.
 
@@ -566,19 +569,19 @@ a)driver.quit() 		:	to close all window tabs.
 
 
 
-62)Difference between assert and verify?
+57)Difference between assert and verify?
 
 a)assert	: it will check the expected output should met the actual output if doesn't match the test will fail.
 
   verify	: it is also like checking the tests, even if the test fails it will not stop, it will continue checking other tests also.
 
 
-63)What is compatibility testing?
+58)What is compatibility testing?
 
 a)Testing the application on different browsers(chrome, firefox,edge) and different devices(mobile, desktop).
 
 
-64)Difference between verification and validation?
+59)Difference between verification and validation?
 
 a)verification		:	It means checking the documents, designs to catch any mistakes like reading a test cases if its written properly or not?
 
@@ -586,20 +589,20 @@ a)verification		:	It means checking the documents, designs to catch any mistakes
 
 
 
-65)when do you use exploratory testing?
+60)when do you use exploratory testing?
 
 a)a)when requirements are unclear
 
   b)when we have less time for writing test cases.
 
 
-66)How do you prioritize test cases?
+61)How do you prioritize test cases?
 
 a)Based on business impact(login, payments), customer requirements & deadlines.
 
 
 
-67)what are Listeners in TestNG/Selenium?
+62)what are Listeners in TestNG/Selenium?
 
 a)Listeners are interfaces that listen to events during test execution(like test pass/fail/start)
 
@@ -612,23 +615,23 @@ a)Listeners are interfaces that listen to events during test execution(like test
 	3)Reporting.
 
 
-68)How to set test priority in cucumber?
+63)How to set test priority in cucumber?
 
-a)cucumber doesn't support priority like TestNg. In cucumber, step execution order is defined by the order of steps wriiten in the .feature file, not by annotations.
+a)cucumber doesn't support priority like TestNg. In cucumber, step execution order is defined by the order of steps written in the .feature file, not by annotations.
 
 
-69)How to run parallel tests in selenium?
+64)How to run parallel tests in selenium?
 
 a)we can run parallel tests by configuring all the tests in the testing.xml file.
 
 
-70)How do you import test data from an excel file for different scenario outlines in a feature file?
+65)How do you import test data from an excel file for different scenario outlines in a feature file?
 
 a)we use APACHE POI to read excel data and pass it to step definitions using DataProvider.
 
 
 
-71)what is backround in selenium cucumber BDD?
+66)what is backround in selenium cucumber BDD?
 
 a)Background is used to define common steps that are run before every scenario in a feature file.
 
@@ -647,7 +650,7 @@ Scenario: Login with invalid user
   Then Error message is shown
 
 
-72)Annotations in TestNG and Junit?
+67)Annotations in TestNG and Junit?
 
 a)Junit Annotations
 
@@ -719,30 +722,22 @@ a)Junit Annotations
 	}
 
 
-73)Which TestNG listeners have you  used in your automation framework?
+68)Which TestNG listeners have you  used in your automation framework?
 
 a)ITestListener for taking screenshots on test failure, logging test start/end.
 
 
-74)What is User Story?
+69)What is User Story?
 
 a)A small feature or requirement described from the end-user perspective.
 
 
-75)Explain Selenium Architecture?
-
-a)I write test scripts in Java Using Selenium client library. The Selenium client library converts each test script line into JSON format and sends them as HTTP requests to the specific browser driver(chrome, edge, firfox). This driver communicates with the actual browser and perform the actions and send the results back to the selenium.
-
-
-76)What is WebDriver?
+70)What is WebDriver?
 
 a)WebDriver is an interface in selenium that provides browser interaction methods like getDriver(), findElement(), sendKeys()
 
 
-77)Cucumber is the one reads the Gherkin steps and find matching Java step methods, execute those methods, and tells the final result of each scenario to the JUnit.
-
-
-78)How would you automate login functionality for a website?
+71)How would you automate login functionality for a website?
 
 Launch browser.
 
@@ -763,7 +758,7 @@ driver.findElement(By.id("loginBtn")).click();
 Assert.assertTrue(driver.getCurrentUrl().contains("dashboard"));
 
 
-79)How you do parallel execution in TestNG?
+72)How you do parallel execution in TestNG?
 
 a)You run multiple test classes, methods, or tests at the same time, rather than one after another — and this is controlled via the .xml file.
 
@@ -795,14 +790,14 @@ a)You run multiple test classes, methods, or tests at the same time, rather than
 TestNG parallel execution means including the test classes in a TestNG XML file, setting parallel="classes" in the <suite> tag, adding thread-count, and running it as a TestNG suite to execute the classes in parallel.
 
 
-80)Is it possible with Cucumber + Junit?
+73)Is it possible with Cucumber + Junit?
 
 a)Yes, parallel execution is possible in Cucumber with JUnit.
 We use the Cucumber JVM Parallel Plugin to generate separate runner files for each feature file or scenario.
 Then we use the Maven Surefire Plugin to execute those generated runner files in parallel by configuring the threadCount and parallel mode.
 
 
-81)Why diver is present after (Javascriptexecutor) ?
+74)Why diver is present after (Javascriptexecutor) ?
 
 a)"Think of driver as a person who has both a car driving license and a crane operating license.
 But when we introduce them to Java, we only say: ‘This is my car driver.’
@@ -817,6 +812,11 @@ WebDriver → An interface that defines the standard browser automation methods 
 JavascriptExecutor → Another interface that defines methods to execute JavaScript in the browser, like executeScript() and executeAsyncScript().
 
 ChromeDriver → A class that implements both WebDriver and JavascriptExecutor (and some other interfaces internally like TakesScreenshot).
+
+
+
+
+
 
 
 
