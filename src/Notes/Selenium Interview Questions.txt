@@ -1,4 +1,7 @@
 
+
+
+
 1)why findElement is present in both webdriver, webelement?
 
 a)webDriver : Used to find an element on the entire page. Like telling to the selenium in the webpage find the element. 
@@ -399,6 +402,36 @@ Cucumber
 JUnit
 
 WebDriverManager
+
+
+
+										OR
+
+My project is a Maven-based Java Selenium Automation Framework using BDD Cucumber, JUnit, and Page Object Model (POM).
+
+src/main/java
+
+base → BaseTest (WebDriver setup, URL from application.properties).
+
+utils → Utility class to read test data.
+
+exceptions → Custom exception handling.
+
+src/test/java
+
+pages → Page classes extending BasePage (common methods: click, type, select, validate).
+
+steps → Step definitions mapping Gherkin steps to Java methods.
+
+runner → Runner class with @RunWith and @CucumberOptions.
+
+src/test/resources
+
+features → .feature files written in Gherkin.
+
+properties → application.properties (URL, credentials).
+
+pom.xml → Manages dependencies (Selenium, Cucumber, JUnit, WebDriverManager).
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -812,6 +845,21 @@ WebDriver → An interface that defines the standard browser automation methods 
 JavascriptExecutor → Another interface that defines methods to execute JavaScript in the browser, like executeScript() and executeAsyncScript().
 
 ChromeDriver → A class that implements both WebDriver and JavascriptExecutor (and some other interfaces internally like TakesScreenshot).
+
+
+75)What is synchronization?
+
+a)Synchronizatio means making sure the test script waits for the webelements to load before performing actions.
+
+ Types of waits : Implicit Wait, Explicit, Fluent Wait.
+
+
+76)Difference between Selenium 3 and Selenium 4?
+
+a)In Selenium 3, when we write test scripts using the Selenium client library, it converts the commands into JSON format using the JSON Wire Protocol and sends them as HTTP requests to the browser drivers like ChromeDriver. The drivers then interact with the actual browsers to perform the actions, and the responses are returned back to the client.
+
+So in Selenium 4, it doesn't convert commands into JSON format using the JSON Wire Protocol like Selenium 3. Instead, it directly sends commands as W3C-compliant HTTP requests to the browser drivers like ChromeDriver, GeckoDriver (Firefox), and EdgeDriver.
+
 
 
 
