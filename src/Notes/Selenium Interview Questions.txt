@@ -1,4 +1,3 @@
-
 1)why findElement is present in both webdriver, webelement?
 
 a)webDriver : Used to find an element on the entire page. Like telling to the selenium in the webpage find the element. 
@@ -18,11 +17,8 @@ a)1)Selenium WebDriver	:-	Automates browsers by interacting with elements.
   2)Selenium IDE, 
   3)Selenium Grid
 
-4)What findElements?
 
-a)This will focus on the element based on locator strategy
-
-5)What are the different types of locators in selenium?
+4)What are the different types of locators in selenium?
 
 a)	Id		(By.id)
 	Name		(By.name)
@@ -31,8 +27,7 @@ a)	Id		(By.id)
 	Link Text	(By.linkText)
 	CSS Selector	(By.cssSelector)
 	XPath		(By.xpath)
-
-6)How do you handle dynamic elements in selenium?
+5)How do you handle dynamic elements in selenium?
 
 a)Handling dynamic elements in Selenium can be tricky because their properties, like IDs or class names, may change with every session, or they may take time to load
   Here are the some strategies :-
@@ -42,53 +37,72 @@ a)Handling dynamic elements in Selenium can be tricky because their properties, 
 	JavaScript Execution:
 	Handle Exceptions:
 
-7)What is findElement?
+6)What is findElement?
 
 a)findElement focuses on finding only one element. If the element found, it returns the element. If the element not found, it throws NoSuchElementException.
 
-8)What is findElements?
+7)What is findElements?
 
 a)findElements focuses on finding multiple elements. If the elements are found, it returns a list of web elements. If the elements are not found, it returns an empty list.
 
-9)How do you handle dropdowns in Selenium?
+8)How do you handle dropdowns in Selenium?
 
 a)using Select Class
 
-10)How do you perform mouse hover, drag-and-drop, and right-click actions?
+9)How do you perform mouse hover, drag-and-drop, and right-click actions?
 
 a)Using the Action Class
 
-11)What is Implicit Wait?
+
+10)What is Implicit Wait?
 
 a)Implicit wait tells the WebDriver to wait for a certain amount of time while trying to find an element before throwing a NoSuchElementException if the element is not found immediately.   It is applied globally to all the elements.
 
-12)What is Explicit Wait?
 
-a)Explicit wait means we will apply to the specific element to wait for certain amount of time based on certain conditions, like the element being visible, clickable, or present.
+11)What is Explicit and Fluent Waits?
 
-13)What is Fluent Wait?
+Hierrachy of Explicit wait classes
 
-a)Fluent Wait is a custom wait we apply to the specific element same like a explicit wait. but it has some extra features like below
+Wait (Interface)
+   ↓
+FluentWait (Class)(Implements Wait)
+   ↓
+WebDriverWait (Class)(Extends Fluent Wait)
 
-	withTimeout(15)		:	here we can give total wait time.
+Wait : It is Interface and top level abstraction and defines a method.
+
+Fluent Wait : FluentWait is an advanced implementation of explicit wait. It contains customize features like below
+a)Timeout -> waits for 30 seconds
+b)How often to check(polling time) -> checks every 2 seconds
+c)Which exceptions to ignore ->Ignores exception.
+
+ex : FluentWait mywait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(30))
+				.pollingEvery(Duration.ofSeconds(2))
+				.ignoring(TimeoutException.class);
+		mywait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//span[@id='spinner']"))));
+
+WebDriver Wait : WebDriverWait is a commonly used implementation of explicit wait in selenium,  used to wait for specific conditions like visibility or clickability or presence of elemets.It internally extends FluentWait.
+
+Explicit Wait : Explicit wait is a concept it is applied to the specific element based on some conditions (like presence of element, visibility of element) to wait until the condition is met. It is implemented using webdriver wait. The webdriver wait extends the fluent wait.
+      
+ex : WebDriverWait myWait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		myWait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//span[@id='spinner']"))));
+
 	
-	pollingEvery(2)		:	to check every 2 seconds.
 
-	ignoring(NoSuchElement)	:	ignoring this exception.	
-
-14)How do you handle alerts, pop-ups, and authentication pop-ups?
+12)How do you handle alerts, pop-ups, and authentication pop-ups?
 
 a)Using JavaScript alerts like driver.switchTo().alert(). we can perform necessary actions like alert.accept(), alert.dismiss(), alert.sendkeys(). Alert is an interface.
 
-15)How do you switch between multiple windows or tabs in selenium?
+13)How do you switch between multiple windows or tabs in selenium?
 
 a)Using getWindowHandles(); Method.
 
-16)How do you take a screenshot in Selenium WebDriver?
+14)How do you take a screenshot in Selenium WebDriver?
 
 a)Using takeScreenshot interface
 
-17)What is hybrid framework in selenium?
+15)What is hybrid framework in selenium?
 
 a)It is a combination of data-driven, keyword driven frameWorks and POM model.
 
