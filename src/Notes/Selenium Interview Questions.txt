@@ -106,28 +106,89 @@ a)Using takeScreenshot interface
 
 a)It is a combination of data-driven, keyword driven frameWorks and POM model.
 
-18)what is page object model (POM)?
+16)what is page object model (POM)?
 
 a)	1)In POM, we have different web pages, we create a separate class for each web page this is called as the page class.
 	2)This page class contains the webelements nothing but variables to store(UI elements) and we define some methods to perform actions on webelements like .sendkeys(), .click().
 	3)Then testScripts call these methods making tests more readable and maintainable. Instead of directly interacting with elements.
 
-19)Difference between TestNg and Junit?
+								(or)In my project i used below which is partially correct using hashmap
 
-a)TestNG and Junit are both testing frameworks in Java.
-	1)Junit is mainly used for basic unit testing to test individual methods. Whether the methods is working correctly or not.
-	2)TestNG is more advanced and commonly used for Selenium automation 
-		a)It supports priority for test order.
-		b)It allows test dependencies
-		c)It supports parallel test execution using .xml
-		d)It generates detailed reports
-		e)It supports @dataprovider to supply multiple sets of test data to a single test method for parameterized tests
+Implemented POM by creating separate page classes like LoginPage and SelectHotelPage where locators are defined.
+I created reusable methods in BasePage like enterText() and click().
+These methods are not directly used in test scripts, but are called from Step Definition classes in Cucumber, which act as the test layer.
 
-20)What are the advantages of using Cucumber?
+17)Difference between TestNg and Junit?
+
+a)JUnit: Mainly used for unit testing (testing individual methods/components)
+  TestNG: Used for unit, integration, and functional testing, widely used in Selenium
+
+1)Test Execution Order
+	JUnit: Does not support priority directly
+	TestNG: TestNG allows you to control the execution order of test methods using priority.
+
+ex :- 
+
+  @Test(priority = 1)
+    public void login() {
+        System.out.println("Login successful");
+    }
+
+    @Test(priority = 2)
+    public void searchHotel() {
+        System.out.println("Hotel searched");
+    }
+
+2)Dependency Between Tests
+	JUnit: No built-in dependency feature
+	TestNG: It Supports dependsOnMethods
+
+ex :-
+
+  @Test(priority = 1)
+    public void login() {
+        System.out.println("Login successful");
+    }
+
+    @Test(priority = 2, dependsOnMethods = "login")
+    public void searchHotel() {
+        System.out.println("Hotel searched");
+    }
+
+3)Parallel Execution
+	JUnit: Limited support (more in JUnit 5, but not as simple)
+	TestNG: Easy parallel execution using testng.xml
+
+
+4)It supports @dataprovider to supply multiple sets of test data to a single test method for data-driven testing.
+
+ex :-
+
+login("user1", "pass1");
+login("user2", "pass2");
+login("user3", "pass3");
+
+@Test(dataProvider = "loginData")
+public void loginTest(String user, String pass) {
+    // same test runs multiple times automatically
+}
+
+    @DataProvider(name = "userData")
+    public Object[][] getData() {
+        return new Object[][] {
+            {"user1", "pass1"},
+            {"user2", "pass2"}
+        };
+    }
+
+5)It generates detailed HTML reports automatically.
+
+
+18)What are the advantages of using Cucumber?
 
 a)Cucumber is a tool it will help us to write test cases in simple English(Gherkin). So both technical and non-technical people can understand easily. It works with selenium the steps are reusable.
 
-21)Explain Scenario, TestScenario, TestCase Scenario Outline, Examples in Cucumber?
+19)Explain Scenario, TestScenario, TestCase Scenario Outline, Examples in Cucumber?
 
 
 a)Scenario: Login Functionality
@@ -173,17 +234,55 @@ Scenario Outline : It is used when we want to run the same scenario multiple tim
 Examples : Data table for scenario Outline.
 
 
-22)What are hooks in Cucumber?
+20)What are hooks in Cucumber?
 
-a)Hooks are special methods in cucumber that run before or after each scenario. They help in setting up and cleaning up the tests environment automatically.
+a)Hooks in Cucumber are special methods annotated with @Before and @After that run before and after each scenario. They are used for setup and teardown activities like launching and closing the browser.
 
-23)What is Data-Driven Framework?
+ public static WebDriver driver;
+
+    @Before
+    public void setUp() {
+        driver = new ChromeDriver();
+        System.out.println("Browser launched");
+    }
+
+    @After
+    public void tearDown() {
+        driver.quit();
+        System.out.println("Browser closed");
+    }
+
+21)What is Data-Driven Framework?
 
 a)If the test data is coming from external sources like (excel, json) etc., and this data is used to run our test scripts is called a Data-Driven Framework.
 
-24)What is  Data Paramterization and how to achieve in TestNG?
+22)What is  Data Paramterization and how to achieve in TestNG?
 
-a)Runing the same script with different sets of test data. using @DataProvider we can achieve it.
+a)Data Parameterization is the process of executing the same test method multiple times with different sets of test data. In TestNG, it can be achieved using @DataProvider, which supplies multiple sets of data to a test method for data-driven testing.
+
+TesNg, it is achieved using @DataProvider, which returns data in the form of Object[][] and allows the test method to run multiple times with different inputs.
+
+ex :-
+login("user1", "pass1");
+login("user2", "pass2");
+login("user3", "pass3");
+
+public class DataParameterizationExample {
+
+    @DataProvider(name = "loginData")
+    public Object[][] getData() {
+        return new Object[][] {
+            {"user1", "pass1"},
+            {"user2", "pass2"},
+            {"user3", "pass3"}
+        };
+    }
+
+    @Test(dataProvider = "loginData")
+    public void loginTest(String username, String password) {
+        System.out.println("Login with: " + username + " | " + password);
+    }
+}
 
 25)What is KeyWord-Driven Framework?
 
@@ -565,7 +664,7 @@ a)CLASSES & OBJECTS :- In my selenium framework, I used classes & objects. For e
 
 	ABSTRACTION   :-I used selenium built-in abstractions like findElement(), findElements(), and getTitle() in my framework.
 
-	Interference  :- In Selenium, WebDriver is an interface that defines all the browser interaction methods like get(), findElement(), getTitle() etc. RemoteWebDriver is a concrete 			 class extend the webdriver interface this is the actual implementation of interface. Again Browser Specific drivers concrete classes like Chromium, FireFox, Safari 			 extend the RemoteWebDriver. In the ChromiumDriver again we have Chrome, Edge so I'm using chrome driver which indirectly i'm using the interface.
+	Interface  :- In Selenium, WebDriver is an interface that defines all the browser interaction methods like get(), findElement(), getTitle() etc. RemoteWebDriver is a concrete 			 class extend the webdriver interface this is the actual implementation of interface. Again Browser Specific drivers concrete classes like Chromium, FireFox, Safari 			 extend the RemoteWebDriver. In the ChromiumDriver again we have Chrome, Edge so I'm using chrome driver which indirectly i'm using the interface.
 
 
 51)What is TestNG Suite?
