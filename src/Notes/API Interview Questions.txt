@@ -151,16 +151,16 @@ pm.test("Verify response must be empty", function(){
     pm.expect(pm.response.text()).to.be.empty;
 })
 
-===========================================================================================================================================================================================
+=====================================================================================================================================================
 
 6)What is postman, and why is it used for API testing?
 
 a)Postman is a tool used to test and debug RESTFUl APIs. It allows testers and developers to send HTTP requests like GET, PUT, POST, DELETE and validate responses easily.
 
 
-7)What are headers in an API request?
+7)What is header in an API request?
 
-a)Headers provide metadata for the response. For example, content-type tells the server about the format of the data, and Authorization provides credentials like tokens.
+a)Headers contain additional information about request or response such as content type, authorization etc.
 
 
 8)How do you set Authorization headers in postman?
@@ -170,9 +170,12 @@ a)I can add it manually under the headers tab with
 	value	: Bearer <token>
 
 
-9)How do you write tests in postman using JavaScript?
+9)What do you do if test case fails?
 
-a)In the Tests tab, we use the pm object.
+a)1)First, I check logs and error messages and screenshots.
+  2)I verify testdata and locators or API requests
+  3)I re-run the test to confirm.
+  4)Still issue persists, I raise a defect with proper details.
 
 
 10)how do you pass data between requests in postman?
@@ -284,7 +287,7 @@ a)plane older java object
 
 23)What is JSON?
 
-a)JavaScript object notation
+a)JavaScript object notation. It is a lightweight data format used to exchange data between client and server.
 
 
 24)What is Serialization?
