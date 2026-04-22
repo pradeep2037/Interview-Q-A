@@ -2,7 +2,13 @@
 
 a)It is an interface / component developed to enable data transfer / data communication accross multiple modules in an enterprise app.
 
-2)API'S can talk via HTML, XML, JSON
+2)How do you validate API with DB?
+a)1)Call API
+  2)Extract response data
+  3)Run SQL Query
+  4)Compare both values
+
+If mismatch -> defect
 
 3)What is protocols?
 
