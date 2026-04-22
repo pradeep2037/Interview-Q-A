@@ -1,6 +1,13 @@
-1)Self Intro?
+1)Explain one real bug you found?
 
-a)Hi, my name is Pradeep Kumar Reddy. I’m from Andhra Pradesh. I completed my graduation in Mechanical Engineering in June 2022. Currently, I’m working at Infosys and have around 2.11 years of experience in Automation Testing using Java and Selenium WebDriver. In my project, I’ve worked with the BDD Cucumber framework and followed the Page Object Model (POM) design pattern. I’ve written and executed test cases for functional and regression testing. I also have hands-on experience with API testing using Postman. Additionally, I’ve used Jenkins for continuous integration and Jira for bug tracking and task management."
+a)In one scenario, API was returning status 200 but data was incorrect. While validating DB, I found mismatch in user migration status.
+
+RootCause :- Backend logic was not updating one field correctly during batch processing.
+
+I raised defect with :-
+a)API Response
+b)DB Proof
+c)Logs
 
 2)Explain about your project?
 
