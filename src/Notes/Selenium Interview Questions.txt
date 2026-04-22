@@ -284,81 +284,89 @@ public class DataParameterizationExample {
     }
 }
 
-25)What is KeyWord-Driven Framework?
+23)What is KeyWord-Driven Framework?
 
 a)In a keyword Driven Framework we use keywords to tell the system what actions to perform in the test. These actions can be things like clicking a button, typing something.
 
-	Mainly it has 3 types of keywords
-		a)Application Keywords :- Actions like clicking or typing
-		b)Generic keywords  :- Actions like waiting and closing the browser. It contains re-usable methods.
-		c)Validation Keywords :- Checking the result whether it is correct or not.
+Mainly it has 3 types of keywords
+1)Application Keywords :-
+	a)These are related to application-specific actions.
+	b)Example: login, clickLoginButton, enterUsername
+2)Generic Keywords
+	a)These are common reusable actions used across applications.
+	b)Example: click, type, wait, openBrowser, closeBrowser
+3)Validation Keywords
+	a)These are used to verify expected results.
+	b)Example: verifyTitle, verifyText, assertElementPresent
 
-26)How do we manage test execution reports in Selenium? Which tools do you use?
+24)How do we manage test execution reports in Selenium? Which tools do you use?
 
 a)Using Extent Reports
 
-27)Suppose your selenium test is failing randomly. How would you debug and fix it?
+25)Suppose your selenium test is failing randomly. How would you debug and fix it?
 
-a)Using explicit waits, logs, and retry logic
+a)Check Synchronization Issues :- Most random failures happen due to timing issues. Explicit waits to ensure elements are properly loaded before interaction.
+b)Analyze Failure Logs & Screenshot :- I would check logs and screenshots to understand exactly where and why the failure is happening.
+c)Verify Locators :- Verifying the xpath
+d)Retrying the logic.
 
-28)What is the difference between the xpath and css?
+26)What is the difference between the xpath and css?
 
-a)Both XPath and CSs Selectors are used to find elements on a webpage.
-	
-	xpath	:	we can find an element using xpath : //div[@class='username'] and we can search elements both forwards and backwards in the DOM
-. In CSS Selector only operates in the forward 			
-			direction.
-	
-	css selector	:	If an element has a class name, use a dot() before it. If it has Id we use #      
-				
-				<div class="button">Click Me</div>
+a)Both XPath and CSS Selectors are used to locate elements in Selenium.  
 
-				CSS Selector : .button   (Selects all elements with class button)      
+1. Syntax :-
+	a)XPath uses XML path syntax
+	 	ex: //div[@class='username']
+	b)CSS Selector uses CSS-style syntax
+		ex: .username (for class), #id (for id) 
+2. Direction
 
-29)What is actions in selenium?
+	a)XPath → Supports both forward and backward traversal in DOM
+		(can use parent, ancestor, preceding, etc.)
+	b)CSS Selector → Only supports forward traversal
+		(cannot move from child to parent)  
+
+27)What is actions in selenium?
 
 a)Action class is used to perform mouseOver, dragAndDrop, dragAndDropBy, ContextClick, DoubleClick these are miscelleneous actions.     
 
-30)How to right click on a button using selenium?
+28)How to right click on a button using selenium?
 
 a)Using ContextClick method we can perform right click actions.
 
-31)What is maven and what are its advantages?
+29)What is maven and what are its advantages?
 
 a)Maven is a tool used to build Java projects and manage dependencies using pom.xml.
  	1)It automatically downloads required JAR files
 	1)Maintains standard folder structure
 	2)Easily integrates with tools like selenium and Jenkins.
 	
- Advantages : Instead of manually downloading and adding libraries like Selenium, JUnit we Just tell Maven which ones we need in a specific file(pom.xml) and it will take care of it.
 
-32)What maven commands have you used? And how do you run a program using Maven?
+30)What maven commands have you used? And how do you run a program using Maven?
 
-a)	mvn clean 	: It will Delete all the old compiled files(like .class files) from the previous builds.
+a)mvn clean	:- 	Deletes the target folder (which includes compiled classes, test reports, and other build artifacts from previous executions.).
+  mvn compile 	:- 	Compiles the source code into .class files.
+  mvn test 	:- 	Runs test cases using frameworks like JUnit or TestNG.
+  mvn install	:-	Installs the package into the local repository for reuse.
+  mvn verify	:-	Runs all checks to verify the project is valid and meets quality criteria (comes after test phase).
 
- 	mvn test	: It Will runs our tests like JUnit or TestNG.  
-	
-	mvn verify	: It runs tests and then checks that everything is in the correct state(build tests etc.,).
+.
 
-
-MVN Test is used to run a program.
-
-
-33)What reports have you used in your frame work?
+31)What reports have you used in your frame work?
 
 a)Extent reports it provides beautiful, interactive HTML reports it supports logs, screenshots, pie-charts.
 
-34)What is JavaScript Executor?
+32)What is JavaScript Executor?
 
-a)JavaScript Executor is an interface in selenium it allows us to execute JavaScript code it interacts directly with DOM where Selenium web driver can not do directly. Using JavaScript                executor we can perform actions like clicking, scrolling.
+a)JavaScript Executor is an interface in selenium it allows us to execute JavaScript code it interacts directly with DOM where Selenium web driver can not do directly. Using JavaScript executor we can perform actions like clicking, scrolling.
 
-35)What is stale element exception and how do you handle?
+33)What is stale element exception and how do you handle?
 
 a)It occurs when we try to interact with a web element that was found earlier in the Dom, but now not present in the current DOM due to a page reload or DOM refresh. 
 
 	solution : reinitialize the WebElement/WebElements
 
-36)What is NoSuchElementException?
+34)What is NoSuchElementException?
 
 a)If our xpath unable to locate element or elements we will get NoSuchElementException.
 
@@ -378,11 +386,6 @@ a)If our xpath unable to locate element or elements we will get NoSuchElementExc
 
 	Reason 5: if the element is present in a shadowDOM
 	Soultion 3: using Shadow DOM hanling or focusing on Shadow Root 
-
-
-37)what is your project?
-
-a)Its a BDD with cucumber api with pom model plus j unit as unit testing framework
 
 
 38)Logging Mechanism?
