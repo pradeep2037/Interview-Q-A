@@ -15,11 +15,22 @@ If mismatch -> defect
 	http	: unsecured
 	https	: secured
 
-4)Have you automated test cases?
+4)Difference between the PUT and PATCH?
 
-a)I automated test cases using postman.
+a)PUT Purpose: Replace the entire resource with new data.
 
+PUT /users/1
+{
+  "name": "Alice",
+  "age": 30
+}
 
+PATCH Purpose: Update only specific fields of a resource.
+
+PATCH /users/1
+{
+  "age": 31
+}
 5)How you run API collections in your postman?
 
 a)I run API collections and generate reports in postman using newman.
