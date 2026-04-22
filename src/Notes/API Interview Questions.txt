@@ -155,7 +155,7 @@ pm.test("Verify response must be empty", function(){
 
 6)What is postman, and why is it used for API testing?
 
-a)Postman is a tool used to test and debug RESTFUl APIs. It allows testers and developers to send HTTP requests like GET, PUT, POST, DELETE and validate responses easily.
+a)Postman is mainly used for manual API testing where we can perform http requests and verify responses without coding.
 
 
 7)What is header in an API request?
@@ -302,7 +302,7 @@ a)Converting of Json Object/Json String into Java Object is called De-Serializat
 
 26)What is Rest Assured? Why we use?
 
-a)RestAssured is a java library used to test RESTFUL APIs. It help us to send requests like get, put, post, delete and validate responses easily.
+a)RestAssured is a Java library used for automating API testing.It helps us to perform http requests and validate the response such as status code, headers and response body. It easily integrates with frameworks like TestNG and CI/CD tools.
 
 
 27)What are some commonly used methods in the Rest Assured API?
@@ -357,16 +357,14 @@ And a Test Layer that drives the automation.
 
 
  
-32) How do you test negative scenarios like 400, 401, 404, 500?
+32) How do you validate API response?
 
-400: Bad Request – send invalid input
+a)I validate API response using:
 
-401: Unauthorized – don’t send token
-
-404: Not Found – request wrong URL
-
-500: Internal Server Error – trigger a crash (if possible)
-
+1)Status code
+2)Response body (data correctness)
+3)Response headers
+4)Response time
 
 33)Full form of REST?
 ➤ Representational State Transfer
