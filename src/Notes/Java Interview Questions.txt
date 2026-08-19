@@ -1,4 +1,4 @@
-1)What is an array?
+0)What is an array?
 
 a)An array is used to store multiple values of the same data type in one variable and can be accessed by index. The size of the array is fixed once it is created.
 
@@ -31,6 +31,14 @@ Row 2  │ 70  80  90
 Multidimensional = two or more levels of []
 
 int[][] a; 
+
+1)What is collections?
+
+a)It is a utility class that provides ready-made methods to perform operations on collections such as
+
+	1)sorting
+	2)reversing
+	3)Finding max/min
 
 2)What is collection in Java?
 
@@ -497,4 +505,7 @@ a)FileInputStream  is  used to read  data from the file as a stream of bytes.
 
 a)Priority :- How quickly the defect should be fixed.
   Severity :- How serious the impact of the bug on the application.
+
+
+
 
