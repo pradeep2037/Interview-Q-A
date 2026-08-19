@@ -1,6 +1,36 @@
 1)What is an array?
 
-a)Array in java is a collection of elements that stored together under one name it must be same datatype and can be accessed by index. The size of the array is fixed once it is created.
+a)An array is used to store multiple values of the same data type in one variable and can be accessed by index. The size of the array is fixed once it is created.
+
+Why { } specifically?
+
+Java uses { } to represent the group of array elements.
+
+For example:
+
+String[] names = {"Pradeep", "Rahul", "Raj"};
+
+1. Single-dimensional array
+
+A single-dimensional array stores values in a single line. 
+	ex :- int[] a = {10, 20, 30};
+
+Single-dimensional = one level of []
+int[] a;
+
+2. Multidimensional array
+
+A multidimensional array has multiple dimensions. which looks like a table with rows and columns.
+        Column
+          0   1   2
+       ┌─────────────
+Row 0  │ 10  20  30
+Row 1  │ 40  50  60
+Row 2  │ 70  80  90
+
+Multidimensional = two or more levels of []
+
+int[][] a; 
 
 2)What is collection in Java?
 
@@ -136,12 +166,17 @@ AccountNumber : (state /variables : length of digits)
 		 (behaviour / methods :  funds transfer, account statements etc..)
 
 
-Class :- A logical entity, it is a Blueprint/template from which you can create object.
+Class :- A class is a blueprint or template it contains methods and variables for single class we can create multiple objects
 
 
 a)Oops :- Oops is a object oriented programming system where everything is treated as objects. These objects contain variables and methods.
 
 	1)Inheritance :- One class can use variables, methods of another class like a child inheriting traits from parent class.
+		
+		SingleLevel :- Child class inherits from parent class.
+		Multi-Level :- Suppose we have 3 classes A,B,C. C inherits from B, And B inherits from A.
+		Hierarchial :- Multiple child classes inherits from the single parent class.
+		Multiple    :- Java doesn't support the multiple-inheritance we can achieve it through interface.
 
 	2)Encapsulation :- Hiding data in terms of private variables and private methods within a class and restricting direct access to them. They can only be accessed and modified 	through public methods(Getters & Setters).
 	
@@ -149,7 +184,7 @@ a)Oops :- Oops is a object oriented programming system where everything is treat
 	It has template in the abstract class we use this template to write our own logic in the child classes.
 
 	4)Polymorphism :- Polymorphism means many forms mainly it has Method Overloading, Method Overriding.
-		a)Method Overloading : - Same method name with different parameters.
+		a)Method Overloading : - Same methods behave differently based on the parameters.
 		b)Method Overriding : - It is a process of providing replacement for the parent class method functionality with the child class method functionality.
 
 12)What is memory management in Java?
@@ -416,5 +451,39 @@ Edit
 H 0 * * *   → Run every day at 12:00 AM
 
 
-34)
+34)What is instance variable?
+
+a)A variable which is declared inside a class & outside of method
+
+35)What is local variable?
+
+a)A variable  which  is  declared  inside  a  method .
+
+36)What is super keyword?
+
+a)Super keyword is used to access the 
+	1)Parent class variable.
+	2)Parent class method.
+	3)Parent class constructor
+
+37)what is this keyword?
+
+a) Is used to distinguish between the instance variable and parameter.
+
+
+38)what is File file = new File("data.txt")?
+
+a)File represents a file or directory path.
+
+It  mainly  gives  you  information  about  the  file and  lets  you  perform  file-system  operations.
+System.out.println(file.exists());
+System.out.println(file.getName());
+System.out.println(file.length());
+
+It doesn't read the contents of the file.
+
+39)what is FileInputStream fis = new FileInputStream("data.txt")?
+
+a)FileInputStream is used to read data from the file as a stream of bytes.
+
 
