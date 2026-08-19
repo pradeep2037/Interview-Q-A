@@ -34,42 +34,62 @@ int[][] a;
 
 2)What is collection in Java?
 
-a)In Java, collection is like a container used to store a group of objects. It helps us to add, remove and manage data easily. Java provides ready-made classes like ArrayList, LinkedList, and hashSet, which are part of the collection framework. These classes can grow and shrink in size, unlike arrays which have a fixed size.
+a)Collection is an interface which is used to store group of objects and we can perform operations such as adding removing. Here size is not fixed can shrink and grow based on the data size. In collection add method returntype is Boolean.
 
-	a)ArrayList :- In ArrayList, we can add/remove items. It is fast we can access the items directly by index because they stored in order(like 					   train seat numbers if we add seat in the middle like at seat 2 the seat 2 will move from 2 to 3).But when we add an item in the   				   middle, the existing item will move from existing index to next index. Simarly when we remove the item the index next to the   					   removed item will fill the gap.
-	b)LinkedList :- It is Similar to ArrayList, we can add, remove items but the main difference is items stored in a node, and these nodes are 						connected like a chain each item knows its next and previous item. Because of this, it is slow to access by index, since it goes 					one by one from the beginning to reach the index. If we add or remove any item in the middle the chain adjust easily.
+3)Difference between list & set?
 
+a)LIST :- 
+	A List is an ordered collection of elements, Duplicates are allowed, Iteration is possible.
 
-3)In collection add method returntype is boolean.some collections doesn't allow duplicates if duplicates present it will throw error instead throwing error they used Boolean to show false.
+b)SET :-
+	A Set is an unordered collection of unique elements, Duplicates are not allowed, Iteration is possible.
 
-4)Difference between 1)arraylist & 2)hashSet?
+4)What is ArrayList?
 
-a) ArrayList Does allow duplicates. HashSet doesn't allow duplicates.
+a)Arrayalist means it stores elements in continuous way. We can add/remove elements. Accessing of an element using index is very fast here.but insertion and removing of element in the middle can be slower because elements may need to shift.
+
+5)What is LinkedList?
+
+a)LinkedList stores elements in nodes. Each node is connected to the previous and next node. To access an element using an index, it may need to travel through the each node until it reaches the required position, so index-based access is slower than ArrayList. Here also we can add/remove elements. Finding the position → can be slow
+Changing the links → very fast. There is no shifting of all the elements like in an ArrayList.
+
+6)What is HashSet?
+
+a)HashSet is a class that implements the Set interface. Store unique elements without guaranteeing their insertion order
+
+7)What is LinkesSet?
+
+a)LinkedHashSet is also a class that implements Set interface.Store unique elements while maintaining insertion order.
+
+8)What is TreeSet?
+
+a)TreeSet is a class that implements the Set interface. Store unique elements and keep them in sorted order.
 	
 
-5)what happens if we add dupliactes to HashSet?
+9)what happens if we add dupliactes to HashSet?
 
 a)It will give return type Boolean. If value add returns True otherwise False.
 
+10)What is Map?
+
+a)Map is an interface in Java used to store data in the form of key-value pairs.
+
+11)What is HashMap?
+
+a)It stores the data in the form of key-value pairs. keys are unique and values should be duplicate. does not guarantee insertion order.
+
+12)What is LinkedHashMap?
+
+a)It stores the data in the form of key-value pairs. keys are unique and values should be duplicate. Maintains insertion order.
+
+13)What is TreeMap?
+
+a)It stores the data in the form of key-value pairs. keys are unique and values should be duplicate. Maintains keys in sorted order.
 
 
-6)what is your location strategy in your project?
-
-a)X - Path
-
-
-7)why you not encourage absolute x-path?
-
-a)Absolute x paths contains indexes which may change because of some ui changes so which may break our scripts we are executing after any change. it always starts from (/html).
-
-
-8)what is return type of add() method in collections?
+14)what is return type of add() method in collection?
 
 a)Boolean T or F
-
-9)what is return type of put() method in HashMap?
-
-a)Value
 
 
 1. getLastRowNum()
@@ -110,7 +130,7 @@ a)Value
 ✔ Returns the total number of non-empty cells in a row.
 
 
-10)What is Java? Explain its features?
+15)What is Java? Explain its features?
 
 a)Java is a high-level, object-oriented programming language is used to create software. It is very secure and able to run on any computer. Once we write a Java Program, we can run it anywhere - like windows, mac, Linux without changing the code.
 
@@ -139,7 +159,7 @@ FEATURES :-
   f)Multithreaded :- Java can do many tasks at the same time
 
 
-11)What are the Main Principles of Oops?
+16)What are the Main Principles of Oops?
 
 [Think of a class as a blueprint or template - like the blueprint for a car. It defines what properties (like color, model, engine type) and behaviours (like drive, brake) a car should have. An object is an actual car built from that blueprint. It has specific values - like a red Honda Civic with a petrol engine.]
 
@@ -178,24 +198,27 @@ a)Oops :- Oops is a object oriented programming system where everything is treat
 		Hierarchial :- Multiple child classes inherits from the single parent class.
 		Multiple    :- Java doesn't support the multiple-inheritance we can achieve it through interface.
 
-	2)Encapsulation :- Hiding data in terms of private variables and private methods within a class and restricting direct access to them. They can only be accessed and modified 	through public methods(Getters & Setters).
+	2)Encapsulation :- Hiding data in terms of private variables and private methods within a class and restricting direct access to them. They can only be accessed and modified 	through public 				   methods(Getters & Setters).
 	
-	3)Abstraction :- Abstraction means hiding the internal implementation of the body it shows only functionality. It has abstract methods(without body), concrete methods(with body). 
-	It has template in the abstract class we use this template to write our own logic in the child classes.
+	3)Abstraction :- Abstraction means hiding internal implementation and showing only functionality to the user. In Java, abstraction can be achieved using abstract classes and interfaces. An 				 abstract class can contain both abstract and concrete methods. Abstract methods act like a blueprint, and the child class provides its own implementation for those methods.
 
 	4)Polymorphism :- Polymorphism means many forms mainly it has Method Overloading, Method Overriding.
 		a)Method Overloading : - Same methods behave differently based on the parameters.
 		b)Method Overriding : - It is a process of providing replacement for the parent class method functionality with the child class method functionality.
 
-12)What is memory management in Java?
+17)What is interface?
+
+a)Interface mainly contains abstract methods. The child class implements the interface and provides its own logic for the methods declared in the interface.
+
+18)What is memory management in Java?
 
 a)Java uses automatic garbage collection to remove unused objects. Memory is managed by JVM in heap and stack memory.
 
-13)What is constructor? How are they different from methods?
+19)What is constructor? How are they different from methods?
 
 a)A Constructor is a special block of code will execute when an object is created to the class. It has the same name as the class and no return type and void.
 
-14)What is the main method in Java?
+20)What is the main method in Java?
 
 a)The main method is the starting point of any Java Program. It is where the execution begins.
 
@@ -209,24 +232,27 @@ a)The main method is the starting point of any Java Program. It is where the exe
 
 	string[] args : Used to accept command-line inputs if needed. 
 
-15)Difference between the JDK, JRE, JVM?
+21)Difference between the JDK, JRE, JVM?
 
-a)JVM : -
-	It converts .class files into binary language which into computer can understand. handles garbage collection.
+a)The JDK(Java Development Kit) contains JRE, and JRE(Java Runtime Evironment) contains JVM(Java Virtual Machine). JDK -> JRE -> JVM.
+
+  JVM : -
+	It converts .class files into binary language and it is responsible for running java bytecode.
 
   JRE :- 
-	It is used to run Java applications contains JVM + Libraries + SupportFiles.
+	JRE provides the environment and required libraries to run Java applications.
+	JRE = JVM + Libraries required to run java applications.
 
   JDK :-
-	It is used to write, compile, and run Java programs. It contains JRE + Development Tools. And it is used to create java programs.
+	JDK provides everything required to develop java applications, including development tools, the runtime environment, and JVM.
 
 
-16)Explain platform independent in Java?
+22)Explain platform independent in Java?
 
 a)Java code is converted into .class files and the JVM knows how to run those .class files on any system.
 
 
-17)What is Defect Life Cycle? (Simple Explanation)
+23)What is Defect Life Cycle? (Simple Explanation)
 
 a)The Defect Life Cycle is the step-by-step journey of a bug (or issue) from the time it is found by a tester until it is fixed and closed by the team.
 
@@ -271,16 +297,8 @@ Deferred – It's a valid bug but will be fixed later.
 Duplicate – The same bug was already reported before.
 
 
-18)Difference between list & set?
 
-a)LIST :- 
-	A List is an ordered collection of elements, Duplicates are allowed, Iteration is possible.
-
-b)SET :-
-	A Set is an unordered collection of unique elements, Duplicates are not allowed, Iteration is possible.
-
-
-19)Can you override static methods?
+24)Can you override static methods?
 
 a)No, we can't override static methods.
 
@@ -288,21 +306,21 @@ a)No, we can't override static methods.
 	2)If a child class defines the same static method as the parent class static method, it doesn't override it - it only hides it.
 
 
-20)Can the main method be overloaded?
+25)Can the main method be overloaded?
 
 a)Yes, we can overload the main method in Java like other method, but the JVM always calls the main method with String[] args as the program's entry point. Other methods can be called manually inside it.
 
 
-21)Difference between the exeception and error?
+26)Difference between the exeception and error?
 
-a)EXCEPTION :- Exception are problems that occur during runtime but can be handled in code using try/catch block.
+a)EXCEPTION :- Exception is an error that occurs during the execution of a program and can be handled in code using try/catch block, throw, throws, finally.
  
   ERROR :- Errors, represent serious issues related to the JVM which can't be handled in code.
 
 
-22)Difference between checked and unchecked exceptions?
+27)Difference between checked and unchecked exceptions?
 
-a)CHECKED EXCEPTIONS :- Checked exceptions happen due to external factors like FileNotFound,InternalServerError or DatabaseError. Java checks them at compiler time and force us to handle 			
+a)CHECKED EXCEPTIONS :- Checked exceptions happen due to external factors like FileNotFound, InternalServerError or DatabaseError. Java checks them at compiler time and force us to handle 			
 			them using try/catch or throws. Once we handle them properly, if the issue really occurs, it will caught in the catch block and the error will be shown at run time.
 
 
@@ -317,25 +335,20 @@ a)CHECKED EXCEPTIONS :- Checked exceptions happen due to external factors like F
 
 			
 
-  UNCHECKED EXCEPTIONS :- Unchecked exceptions are caused due to bad logic or coding mistakes like null or division by zero. Java doesn't check them at compile time. so it doesn't force us to handle. If they happen, they cause an error at run time.
+UNCHECKED EXCEPTIONS :- Unchecked exceptions are caused due to bad logic or coding mistakes like null or division by zero. Java doesn't check them at compile time. so it doesn't force us to handle. If they happen, they cause an error at run time.
+ 
+ ex :- a)NullPointerException
+       b)ArithmeticException
+       c)ArrayIndexOutOfBoundException
 
 
-
-
-
-
-23)What is mean by HashMap?
-
-a)It stores values as key-value pairs, it is very fast to find value using the key. order is not guaranteed.
-
-
-24)What is static why we use?
+28)What is static why we use?
 
 a)1)Static is a keyword in Java used for memory management. It belongs to the class, not the object.
   2)When we declare variable or method as a static, it is shared among all objects of that class - there is only one copy in memory.
 
 
-25)What is the difference between the throw and throws in Java?
+29)What is the difference between the throw and throws in Java?
 
 a)	throw :- It is used to manually throw an exception from our code. By using this we can throw only one exception.
 
@@ -346,7 +359,7 @@ a)	throw :- It is used to manually throw an exception from our code. By using th
 					}
 
 
-26)Difference between the final, finally, finalize in Java?
+30)Difference between the final, finally, finalize in Java?
 
 a) FINAL :- Final is a keyword in Java used to make something constant, which means we cannot change it after it's set.
 
@@ -376,7 +389,7 @@ a) FINAL :- Final is a keyword in Java used to make something constant, which me
   FINALLY :- It is a block of code always executes after try - catch block whether an exception occurs or not.
 
 
-27) what is 
+31) what is 
 
 public class InvalidBrowserException extends RuntimeException {
 
@@ -401,25 +414,19 @@ public Throwable(String message) {
 }
 
 
-
-28)What are exceptions in Java?
-
-a)Exceptions are runtime errors. Java handles them using try-catch-finally blocks.
-
-
-29)Overload and Override static methods?
+32)Overload and Override static methods?
 
 Overload: Yes
 
 Override: No. Static methods belong to class not object
 
 
-30)Execute Test Cases in Framework
+33)Execute Test Cases in Framework
 
 Through TestNG/Cucumber runner class or Jenkins job
 
 
-31) Use of Test Runner in Cucumber
+34) Use of Test Runner in Cucumber
 
 It runs all feature files/scenarios
 
@@ -427,7 +434,7 @@ Connects glue code with feature files
 
 
 
-32)Joins in SQL
+35)Joins in SQL
 
 Inner Join: common records
 
@@ -441,7 +448,7 @@ Self Join: joining table with itself
 
 
 
-33)CRON in Jenkins
+36)CRON in Jenkins
 
 Used to schedule jobs
 
@@ -451,27 +458,27 @@ Edit
 H 0 * * *   → Run every day at 12:00 AM
 
 
-34)What is instance variable?
+37)What is instance variable?
 
-a)A variable which is declared inside a class & outside of method
+a)A variable  which  is  declared  inside  a  class  & outside  of  method
 
-35)What is local variable?
+38)What is local variable?
 
 a)A variable  which  is  declared  inside  a  method .
 
-36)What is super keyword?
+39)What is super keyword?
 
 a)Super keyword is used to access the 
 	1)Parent class variable.
 	2)Parent class method.
 	3)Parent class constructor
 
-37)what is this keyword?
+40)what is this keyword?
 
 a) Is used to distinguish between the instance variable and parameter.
 
 
-38)what is File file = new File("data.txt")?
+41)what is File file = new File("data.txt")?
 
 a)File represents a file or directory path.
 
@@ -482,8 +489,8 @@ System.out.println(file.length());
 
 It doesn't read the contents of the file.
 
-39)what is FileInputStream fis = new FileInputStream("data.txt")?
+42)what is FileInputStream fis = new FileInputStream("data.txt")?
 
-a)FileInputStream is used to read data from the file as a stream of bytes.
+a)FileInputStream  is  used to read  data from the file as a stream of bytes.
 
 
