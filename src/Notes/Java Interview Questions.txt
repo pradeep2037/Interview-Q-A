@@ -493,4 +493,8 @@ It doesn't read the contents of the file.
 
 a)FileInputStream  is  used to read  data from the file as a stream of bytes.
 
+43)Difference  between the severity & priority?
+
+a)Priority :- How quickly the defect should be fixed.
+  Severity :- How serious the impact of the bug on the application.
 
